@@ -1,17 +1,15 @@
 <template>
-    <div class="navbar d-flex" :class="{ 'white-navbar': showNavbar }">
+    <div class="navbar d-flex" :class="{ 'grey-navbar': showNavbar }">
         <h1>Navbar</h1>
 
         <div class="menu-div d-flex">
             <router-link to='/'>
-                <p>Home</p>
+                <p class="menu-text">Home</p>
             </router-link>
             <router-link to='/shop'>
-                <p>Shop</p>
+                <p class="menu-text">Shop</p>
             </router-link>
         </div>
-
-
     </div>
 </template>
 <script>
@@ -50,19 +48,30 @@ export default {
     position: fixed;
     z-index: 1;
     width: 100%;
-    transition: all 1s ease;
+    transition: all 0.8s ease;
 }
 
-.white-navbar {
-    background-color: black;
+.grey-navbar {
+    height: 90px;
+    background-color: rgba(128, 128, 128);
+    background: linear-gradient(180deg,
+            rgba(128, 128, 128, 1)0,
+            rgba(128, 128, 128, 0.6)80%,
+            rgba(128, 128, 128, 0)100%)
 }
+
+
 
 .menu-div {
-    background-color: red;
     gap: 20px;
 }
 
 .menu-div a {
     text-decoration: none;
+}
+
+.menu-text {
+    color: white;
+    font-weight: bold;
 }
 </style>
