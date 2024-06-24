@@ -1,6 +1,6 @@
 <template>
     <div class="navbar d-flex" :class="{ 'grey-navbar': showNavbar }">
-        <h1>Navbar</h1>
+        <h1 class="menu-text">Navbar</h1>
 
         <div class="menu-div d-flex">
             <router-link to='/'>

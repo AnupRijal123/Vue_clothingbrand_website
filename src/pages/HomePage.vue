@@ -1,31 +1,28 @@
 <template>
     <div>
         <div class="poster-container">
-            <img class="poster-image" src="../assets/poster/poster1.jpg" />
+            <img class="poster-image" src="../assets/poster/poster1.jpg" alt="poster" />
             <div class="fade"></div>
         </div>
 
-        <h1>hello</h1>
-        <h1>hello</h1>
+        <div class="title-div d-flex">
+            <h1>New Collection</h1>
+        </div>
 
-        <h1>hello</h1>
+        <ItemsComponent />
 
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-
-        <h1>hello</h1>
-
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-
-        <h1>hello</h1>
-
-        <h1>hello</h1>
 
     </div>
 </template>
+
+<script>
+import ItemsComponent from '../components/ItemsComponent';
+export default {
+    components: {
+        ItemsComponent,
+    }
+}
+</script>
 
 <style scoped>
 .poster-image {
@@ -44,5 +41,10 @@
     bottom: 0;
     height: 100px;
     width: 100%;
+}
+
+.title-div {
+    justify-content: center;
+    padding: 20px 0px;
 }
 </style>

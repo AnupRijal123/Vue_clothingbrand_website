@@ -4,17 +4,14 @@ p {
 }
 
 p {
-    color: green;
     font-size: 16px;
 }
 
 h2 {
-    color: red;
     font-size: 24px;
 }
 
 h1 {
-    color: blue;
     font-size: 32px;
 }
 

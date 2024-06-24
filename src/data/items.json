@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "sweater pant",
+        "price": 1800,
+        "imgUrl": "item1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "tshirt",
+        "price": 1000,
+        "imgUrl": "item1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "shoes",
+        "price": 2000,
+        "imgUrl": "item1.jpg"
+    },
+    {
+        "id": 4,
+        "name": "shoes",
+        "price": 2000,
+        "imgUrl": "item1.jpg"
+    },
+    {
+        "id": 5,
+        "name": "shoes",
+        "price": 2000,
+        "imgUrl": "item1.jpg"
+    }
+]
