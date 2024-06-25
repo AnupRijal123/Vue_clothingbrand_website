@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "sweater pant",
+        "price": 1800,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": true
+    },
+    {
+        "id": 2,
+        "name": "tshirt",
+        "price": 1000,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": false
+    },
+    {
+        "id": 3,
+        "name": "shoes",
+        "price": 2000,
+        "discountPercentage": 12,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": false
+    },
+    {
+        "id": 4,
+        "name": "shoes",
+        "price": 2000,
+        "discountPercentage": null,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": true
+    },
+    {
+        "id": 5,
+        "name": "shoes",
+        "price": 2000,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": false
+    }
+]

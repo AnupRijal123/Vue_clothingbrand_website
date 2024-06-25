@@ -24,6 +24,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+body::-webkit-scrollbar {
+    background-color: rgba(128, 128, 128, 0);
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ca94a1;
+    border-radius: 10px;
+}
+
 .d-flex {
     display: flex;
 }

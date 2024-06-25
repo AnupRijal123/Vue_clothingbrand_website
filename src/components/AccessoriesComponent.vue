@@ -1,0 +1,231 @@
+<template>
+    <div class="grid-container">
+        <div class="card first-card" >
+            <div class="d-flex image-div">
+            <img :src="require(`@/assets/items/${items[0].img1}`)" class="card-image card-image1" />
+            <img :src="require(`@/assets/items/${items[0].img2}`)" class="card-image card-image2"/>
+            </div>
+            <div class="card-details d-flex">
+                <h2>{{ items[0].name }}</h2>
+                <div class="price-section d-flex">
+                    <s v-if="items[0].offerPrice" class="grey-text">
+                    <span>NPR </span>
+                    <span>{{ items[0].price }}</span>
+                    </s>
+                    <p v-if="items[0].offerPrice">
+                        <span class="grey-text">NPR </span>
+                        <span>{{items[0].offerPrice}}</span>
+                    </p>
+                    <p v-if="!items[0].offerPrice"> 
+                    <span class="grey-text">NPR </span>
+                    <span>{{ items[0].price }}</span>
+                    </p>
+                </div>
+                <p class="read-more-section">Read More</p>
+            </div>
+            <div class="tag">
+                <p>Sold Out</p>
+            </div>
+        </div>  
+
+        <div class="card second-card" >
+            <div class="d-flex image-div">
+            <img :src="require(`@/assets/items/${items[0].img1}`)" class="card-image card-image1" />
+            <img :src="require(`@/assets/items/${items[0].img2}`)" class="card-image card-image2"/>
+            </div>
+            <div class="card-details d-flex">
+                <h2>{{ items[0].name }}</h2>
+                <div class="price-section d-flex">
+                    <s v-if="items[0].offerPrice" class="grey-text">
+                    <span>NPR </span>
+                    <span>{{ items[0].price }}</span>
+                    </s>
+                    <p v-if="items[0].offerPrice">
+                        <span class="grey-text">NPR </span>
+                        <span>{{items[0].offerPrice}}</span>
+                    </p>
+                    <p v-if="!items[0].offerPrice"> 
+                    <span class="grey-text">NPR </span>
+                    <span>{{ items[0].price }}</span>
+                    </p>
+                </div>
+                <p class="read-more-section">Read More</p>
+            </div>
+            <div class="tag">
+                <p>Sold Out</p>
+            </div>
+        </div>  
+
+        <div class="card third-card" >
+            <div class="d-flex image-div">
+            <img :src="require(`@/assets/items/${items[0].img1}`)" class="card-image card-image1" />
+            <img :src="require(`@/assets/items/${items[0].img2}`)" class="card-image card-image2"/>
+            </div>
+            <div class="card-details d-flex">
+                <h2>{{ items[0].name }}</h2>
+                <div class="price-section d-flex">
+                    <s v-if="items[0].offerPrice" class="grey-text">
+                    <span>NPR </span>
+                    <span>{{ items[0].price }}</span>
+                    </s>
+                    <p v-if="items[0].offerPrice">
+                        <span class="grey-text">NPR </span>
+                        <span>{{items[0].offerPrice}}</span>
+                    </p>
+                    <p v-if="!items[0].offerPrice"> 
+                    <span class="grey-text">NPR </span>
+                    <span>{{ items[0].price }}</span>
+                    </p>
+                </div>
+                <p class="read-more-section">Read More</p>
+            </div>
+            <div class="tag">
+                <p>Sold Out</p>
+            </div>
+        </div>  
+
+      
+
+         
+
+
+
+
+    </div>
+
+</template>
+<script>
+import Items from '../data/accessories.json';
+export default {
+    data() {
+        return {
+            items: Items,
+        }
+    },
+    mounted() {
+        console.log(this.items);
+    }
+}
+</script>
+
+<style scoped>
+.grid-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:30px 0px;
+
+}
+
+.card {
+    width: 280px;
+    position:relative;
+}
+.read-more-section{
+    display:none;
+    cursor:pointer;
+    color:#ca94a1;
+    transition:color 0.2s ease;
+}
+.read-more-section:hover{
+    color:rgba(128,128,128);
+}
+
+.card:hover .price-section{
+    display:none;
+}
+.card:hover .read-more-section{
+    display:block;
+}
+
+.card-image {
+    width: 100%;
+    height:100%;
+    object-fit: fill;
+    transition:transform 1s ease;
+    cursor:pointer;
+}
+
+.image-div{
+    position:relative;
+}
+.card-image1,.card-image2{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.card-image1{
+    opacity:1;
+    transition:opacity 1s ease;
+}
+.card-image2{
+    opacity:0;
+    transition:opacity 1s ease;
+}
+.card:hover .card-image1{
+    opacity:0;
+}
+.card:hover .card-image2{
+    opacity:1;
+}
+
+
+.card:hover .card-image{
+    transform:scale(1.08);
+    filter:brightness(80%);
+}
+
+.card-details h2{
+    margin:0;
+    font-size:18px;
+}
+.price-section{
+    gap:10px;
+}
+.grey-text{
+    color:rgba(128,128,128);
+}
+.tag{
+    background-color:#ca94a1;
+    position:absolute;
+    top:5px;
+    left:5px;
+    padding:3px;
+}
+.tag p{
+    color:#ffffff;
+    font-size:12px;
+    font-weight:600;
+}
+
+.first-card .image-div{
+    height:360px
+}
+
+.second-card .image-div{
+    height:280px;
+}
+
+.third-card .image-div{
+    height:320px;
+}
+.first-card{
+    height:440px;
+}
+.second-card{
+    height:360px;
+}
+.third-card{
+    height:390px;
+}
+.card-details{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+</style>

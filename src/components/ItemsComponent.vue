@@ -1,17 +1,35 @@
 <template>
     <div class="grid-container">
         <div class="card" v-for="item in items" :key="item.id">
-            <img :src="require(`@/assets/items/${item.imgUrl}`)" class="card-image" />
+            <div class="d-flex">
+            <img :src="require(`@/assets/items/${item.img1}`)" class="card-image card-image1" />
+            <img :src="require(`@/assets/items/${item.img2}`)" class="card-image card-image2"/>
+            </div>
             <div class="card-details d-flex">
                 <h2>{{ item.name }}</h2>
-                <p class="price-section">
-                    <span class="currency-text">NPR : </span>
+                <div class="price-section d-flex">
+                    <s v-if="item.discountPercentage" class="grey-text">
+                    <span>NPR </span>
                     <span>{{ item.price }}</span>
-                </p>
+                    </s>
+                    <p v-if="item.discountPercentage">
+                        <span class="grey-text">NPR </span>
+                        <span>
+                            {{item.price-((item.discountPercentage/100)*item.price)}}
+                        </span>
+                    </p>
+                    <p v-if="!item.discountPercentage"> 
+                    <span class="grey-text">NPR </span>
+                    <span>{{ item.price }}</span>
+                    </p>
+                </div>
                 <p class="read-more-section">Read More</p>
             </div>
-            <div class="tag">
-                <p>Sold Out</p>
+            <div class="tag" v-if="item.isSold||item.discountPercentage">
+                <p v-if="item.isSold">Sold Out</p>
+                <p v-if="!item.isSold && item.discountPercentage">
+                    -{{item.discountPercentage}}%
+                </p>
             </div>
         </div>  
 
@@ -21,7 +39,7 @@
 
 </template>
 <script>
-import Items from '../data/items.json';
+import Items from '../data/newCollection.json';
 export default {
     data() {
         return {
@@ -51,6 +69,10 @@ export default {
 .read-more-section{
     display:none;
     cursor:pointer;
+    color:#ca94a1;
+    transition:color 0.2s ease;
+}
+.read-more-section:hover{
     color:rgba(128,128,128);
 }
 
@@ -68,8 +90,28 @@ export default {
     transition:transform 0.5s ease;
     cursor:pointer;
 }
-.card-image:hover{
-    transform:scale(1.1);
+.card-image1{
+    transition:width 0.4s ease-in-out;
+    opacity:1;
+}
+
+.card:hover .card-image1{
+    width:0px;
+    opacity:0;
+}
+.card-image2{
+    width:0px;
+    transition:width 0.4s ease-in-out;
+    opacity:0;
+}
+.card:hover .card-image2{
+    width:100%;
+    opacity:1;
+}
+
+.card:hover .card-image{
+    transform:scale(1.08);
+    filter:brightness(80%);
 }
 
 .card-details {
@@ -82,7 +124,10 @@ export default {
     margin:0;
     font-size:18px;
 }
-.currency-text{
+.price-section{
+    gap:10px;
+}
+.grey-text{
     color:rgba(128,128,128);
 }
 .tag{
@@ -97,4 +142,7 @@ export default {
     font-size:12px;
     font-weight:600;
 }
+
+
+
 </style>

@@ -42,7 +42,7 @@ export default {
 <style scoped>
 .navbar {
     background-color: transparent;
-    height: 80px;
+    height: 70px;
     align-items: center;
     justify-content: space-around;
     position: fixed;
@@ -73,5 +73,10 @@ export default {
 .menu-text {
     color: white;
     font-weight: bold;
+    transition:all 0.5s ease;
+}
+.menu-div .menu-text:hover{
+    transform:scale(1.2);
+    filter:brightness(0.9);
 }
 </style>
