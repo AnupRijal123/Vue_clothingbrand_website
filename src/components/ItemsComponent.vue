@@ -57,15 +57,16 @@ export default {
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
-    justify-content: center;
     padding:20px 0px;
-
+    width:85%;
+    margin:auto;
 }
 
 .card {
     width: 250px;
     position:relative;
 }
+
 .read-more-section{
     display:none;
     cursor:pointer;
@@ -123,6 +124,7 @@ export default {
 .card-details h2{
     margin:0;
     font-size:18px;
+    word-break:break-all;
 }
 .price-section{
     gap:10px;
@@ -143,6 +145,10 @@ export default {
     font-weight:600;
 }
 
-
+@media only screen and (max-width:1352px){
+    .grid-container{
+        justify-content:center;
+    }
+}
 
 </style>

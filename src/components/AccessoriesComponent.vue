@@ -8,79 +8,85 @@
             <div class="card-details d-flex">
                 <h2>{{ items[0].name }}</h2>
                 <div class="price-section d-flex">
-                    <s v-if="items[0].offerPrice" class="grey-text">
+                    <s v-if="items[0].discountPercentage" class="grey-text">
                     <span>NPR </span>
                     <span>{{ items[0].price }}</span>
                     </s>
-                    <p v-if="items[0].offerPrice">
+                    <p v-if="items[0].discountPercentage">
                         <span class="grey-text">NPR </span>
-                        <span>{{items[0].offerPrice}}</span>
+                        <span>
+                            {{items[0].price-((items[0].discountPercentage/100)*items[0].price)}}
+                        </span>
                     </p>
-                    <p v-if="!items[0].offerPrice"> 
+                    <p v-if="!items[0].discountPercentage"> 
                     <span class="grey-text">NPR </span>
                     <span>{{ items[0].price }}</span>
                     </p>
                 </div>
                 <p class="read-more-section">Read More</p>
             </div>
-            <div class="tag">
-                <p>Sold Out</p>
+            <div class="tag" v-if="items[0].discountPercentage">
+                <p>-{{items[0].discountPercentage}}%</p>
             </div>
         </div>  
 
         <div class="card second-card" >
             <div class="d-flex image-div">
-            <img :src="require(`@/assets/items/${items[0].img1}`)" class="card-image card-image1" />
-            <img :src="require(`@/assets/items/${items[0].img2}`)" class="card-image card-image2"/>
+            <img :src="require(`@/assets/items/${items[1].img1}`)" class="card-image card-image1" />
+            <img :src="require(`@/assets/items/${items[1].img2}`)" class="card-image card-image2"/>
             </div>
             <div class="card-details d-flex">
-                <h2>{{ items[0].name }}</h2>
+                <h2>{{ items[1].name }}</h2>
                 <div class="price-section d-flex">
-                    <s v-if="items[0].offerPrice" class="grey-text">
+                    <s v-if="items[1].discountPercentage" class="grey-text">
                     <span>NPR </span>
-                    <span>{{ items[0].price }}</span>
+                    <span>{{ items[1].price }}</span>
                     </s>
-                    <p v-if="items[0].offerPrice">
+                    <p v-if="items[1].discountPercentage">
                         <span class="grey-text">NPR </span>
-                        <span>{{items[0].offerPrice}}</span>
+                        <span>
+                            {{items[1].price-((items[1].discountPercentage/100)*items[1].price)}}
+                        </span>
                     </p>
-                    <p v-if="!items[0].offerPrice"> 
+                    <p v-if="!items[1].discountPercentage"> 
                     <span class="grey-text">NPR </span>
-                    <span>{{ items[0].price }}</span>
+                    <span>{{ items[1].price }}</span>
                     </p>
                 </div>
                 <p class="read-more-section">Read More</p>
             </div>
-            <div class="tag">
-                <p>Sold Out</p>
+            <div class="tag" v-if="items[1].discountPercentage">
+                <p>-{{items[1].discountPercentage}}%</p>
             </div>
         </div>  
 
         <div class="card third-card" >
             <div class="d-flex image-div">
-            <img :src="require(`@/assets/items/${items[0].img1}`)" class="card-image card-image1" />
-            <img :src="require(`@/assets/items/${items[0].img2}`)" class="card-image card-image2"/>
+            <img :src="require(`@/assets/items/${items[2].img1}`)" class="card-image card-image1" />
+            <img :src="require(`@/assets/items/${items[2].img2}`)" class="card-image card-image2"/>
             </div>
             <div class="card-details d-flex">
-                <h2>{{ items[0].name }}</h2>
+                <h2>{{ items[2].name }}</h2>
                 <div class="price-section d-flex">
-                    <s v-if="items[0].offerPrice" class="grey-text">
+                    <s v-if="items[2].discountPercentage" class="grey-text">
                     <span>NPR </span>
-                    <span>{{ items[0].price }}</span>
+                    <span>{{ items[2].price }}</span>
                     </s>
-                    <p v-if="items[0].offerPrice">
+                    <p v-if="items[2].discountPercentage">
                         <span class="grey-text">NPR </span>
-                        <span>{{items[0].offerPrice}}</span>
+                        <span>
+                            {{items[2].price-((items[2].discountPercentage/100)*items[2].price)}}
+                        </span>
                     </p>
-                    <p v-if="!items[0].offerPrice"> 
+                    <p v-if="!items[2].discountPercentage"> 
                     <span class="grey-text">NPR </span>
-                    <span>{{ items[0].price }}</span>
+                    <span>{{ items[2].price }}</span>
                     </p>
                 </div>
                 <p class="read-more-section">Read More</p>
             </div>
-            <div class="tag">
-                <p>Sold Out</p>
+            <div class="tag" v-if="items[2].discountPercentage">
+                <p>-{{items[2].discountPercentage}}%</p>
             </div>
         </div>  
 
@@ -111,15 +117,16 @@ export default {
 <style scoped>
 .grid-container {
     display: flex;
-    gap: 50px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:space-between;
     padding:30px 0px;
+    width:85%;
+    margin:auto;
 
 }
 
 .card {
-    width: 280px;
+    width: 300px;
     position:relative;
 }
 .read-more-section{
@@ -158,11 +165,11 @@ export default {
 
 .card-image1{
     opacity:1;
-    transition:opacity 1s ease;
+    transition:opacity 1.5s ease;
 }
 .card-image2{
     opacity:0;
-    transition:opacity 1s ease;
+    transition:opacity 1.5s ease;
 }
 .card:hover .card-image1{
     opacity:0;
@@ -180,6 +187,7 @@ export default {
 .card-details h2{
     margin:0;
     font-size:18px;
+    word-break:break-all;
 }
 .price-section{
     gap:10px;
@@ -190,8 +198,8 @@ export default {
 .tag{
     background-color:#ca94a1;
     position:absolute;
-    top:5px;
-    left:5px;
+    top:10px;
+    left:-16px;
     padding:3px;
 }
 .tag p{
@@ -218,7 +226,7 @@ export default {
     height:360px;
 }
 .third-card{
-    height:390px;
+    height:400px;
 }
 .card-details{
     position:absolute;
@@ -227,5 +235,13 @@ export default {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+
+@media only screen and (max-width:1075px){
+    .grid-container{
+        justify-content:center;
+        gap:10%;
+
+    }
 }
 </style>
