@@ -1,25 +1,27 @@
 <template>
   <div class="main-container">
     <NavbarComponent />
-    <div class=" content-container">
+    <div class="content-container">
       <router-view></router-view>
-      <!-- <p @click="goToTop" class="go-to-top" :class="{'move-up':showNavigateButton}">go up</p> -->
       <div @click="goToTop" class="go-to-top" :class="{'move-up':showNavigateButton}">
         <font-awesome-icon :icon="['fas', 'angle-up']" />
       </div>
     </div>
+    <FooterComponent/>
   </div>
 
 </template>
 <script>
 import './base.css';
 import NavbarComponent from './components/NavbarComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
 
 export default {
   name: 'App',
   components: {
     NavbarComponent,
+    FooterComponent,
   },
   data(){
     return{
@@ -55,15 +57,8 @@ export default {
 }
 </script>
 <style scoped>
-.main-container {
-  background-color: pink;
-  position: relative;
-}
-
-.content-container {
-  position: absolute;
-  top: 0;
-  width: 100%;
+.content-container{
+  padding-bottom:40px;
 }
 .go-to-top{
   position:fixed;
@@ -77,6 +72,7 @@ export default {
   padding:5px 8px;
   border-radius:50%;
   color:#3a3b3c;
+  cursor:pointer;
 }
 .move-up{
   bottom:30px;

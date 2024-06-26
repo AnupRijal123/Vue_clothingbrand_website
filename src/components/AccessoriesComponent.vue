@@ -8,18 +8,18 @@
             <div class="card-details d-flex">
                 <h2>{{ items[0].name }}</h2>
                 <div class="price-section d-flex">
-                    <s v-if="items[0].discountPercentage" class="grey-text">
+                    <s v-if="items[0].discountPercentage">
                     <span>NPR </span>
                     <span>{{ items[0].price }}</span>
                     </s>
                     <p v-if="items[0].discountPercentage">
-                        <span class="grey-text">NPR </span>
+                        <span>NPR </span>
                         <span>
                             {{items[0].price-((items[0].discountPercentage/100)*items[0].price)}}
                         </span>
                     </p>
                     <p v-if="!items[0].discountPercentage"> 
-                    <span class="grey-text">NPR </span>
+                    <span>NPR </span>
                     <span>{{ items[0].price }}</span>
                     </p>
                 </div>
@@ -38,18 +38,18 @@
             <div class="card-details d-flex">
                 <h2>{{ items[1].name }}</h2>
                 <div class="price-section d-flex">
-                    <s v-if="items[1].discountPercentage" class="grey-text">
+                    <s v-if="items[1].discountPercentage">
                     <span>NPR </span>
                     <span>{{ items[1].price }}</span>
                     </s>
                     <p v-if="items[1].discountPercentage">
-                        <span class="grey-text">NPR </span>
+                        <span>NPR </span>
                         <span>
                             {{items[1].price-((items[1].discountPercentage/100)*items[1].price)}}
                         </span>
                     </p>
                     <p v-if="!items[1].discountPercentage"> 
-                    <span class="grey-text">NPR </span>
+                    <span>NPR </span>
                     <span>{{ items[1].price }}</span>
                     </p>
                 </div>
@@ -68,18 +68,18 @@
             <div class="card-details d-flex">
                 <h2>{{ items[2].name }}</h2>
                 <div class="price-section d-flex">
-                    <s v-if="items[2].discountPercentage" class="grey-text">
+                    <s v-if="items[2].discountPercentage">
                     <span>NPR </span>
                     <span>{{ items[2].price }}</span>
                     </s>
                     <p v-if="items[2].discountPercentage">
-                        <span class="grey-text">NPR </span>
+                        <span>NPR </span>
                         <span>
                             {{items[2].price-((items[2].discountPercentage/100)*items[2].price)}}
                         </span>
                     </p>
                     <p v-if="!items[2].discountPercentage"> 
-                    <span class="grey-text">NPR </span>
+                    <span >NPR </span>
                     <span>{{ items[2].price }}</span>
                     </p>
                 </div>
@@ -188,13 +188,19 @@ export default {
     margin:0;
     font-size:18px;
     word-break:break-all;
+    color:rgba(128,128,128);
 }
 .price-section{
     gap:10px;
 }
-.grey-text{
+.price-section p{
+    color:rgba(128,128,128);
+    font-weight:bold;
+}
+.price-section s{
     color:rgba(128,128,128);
 }
+
 .tag{
     background-color:#ca94a1;
     position:absolute;
@@ -240,7 +246,7 @@ export default {
 @media only screen and (max-width:1075px){
     .grid-container{
         justify-content:center;
-        gap:10%;
+        gap:15%;
 
     }
 }

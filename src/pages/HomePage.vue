@@ -15,7 +15,7 @@
             <h1>Accessories</h1>
             <AccessoriesComponent />
         </div>
-        
+          
         <div class="about-container d-flex">
             <img src="../assets/storeImages/store1.jpg"
                 class="about-image"
@@ -29,6 +29,29 @@
                 </p>
             </div>
         </div>
+
+        <div class="follow-us-container">
+            <div class="follow-us-content d-flex">
+                <img src="../assets/modelImages/model.jpg"
+                    class="model-image"
+                    alt="model"
+                />
+                <div class="follow-us-description">
+                    <div class="text-button-div">
+                        <h1>
+                            Follow us for updates and exclusive offers on our website!
+                        </h1>
+                        <button class="main-button follow-us-button d-flex">
+                        <font-awesome-icon :icon="['fab', 'facebook']" class="facebook-icon"/>
+                        <span>follow us</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
 
        
 
@@ -101,6 +124,41 @@ export default {
     line-height:24px;
     letter-spacing:1px;
 }
+.follow-us-container{
+    background-color:#3a3b3c;
+    padding:30px 0px;
+}
+.follow-us-content{
+    width:85%;
+    margin:auto;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.model-image{
+    width:55%;
+    height:400px;
+    object-fit:fill;
+}
+.follow-us-description{
+    background-color:#ffffff;
+    flex:1;
+    display:flex;
+    align-items:center;
+    padding-left:40px;
+}
+.text-button-div h1{
+    padding-bottom:20px;
+}
+.facebook-icon{
+    color:white;
+    font-size:20px;
+}
+.follow-us-button{
+    background-color:#ca94a1;
+    gap:10px;
+    align-items:center;
+}
+
 
 @media only screen and (max-width:768px){
     .about-container{
@@ -109,6 +167,15 @@ export default {
     }
     .about-image{
         width:100%;
+    }
+    .follow-us-content{
+        flex-direction:column;
+    }
+    .model-image{
+        width:100%;
+    }
+    .follow-us-description{
+        padding:20px;
     }
 }
 

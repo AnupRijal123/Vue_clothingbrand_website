@@ -71,10 +71,11 @@ export default {
 }
 
 .menu-text {
-    color: white;
+    color: #fff;
     font-weight: bold;
     transition:all 0.5s ease;
 }
+
 .menu-div .menu-text:hover{
     transform:scale(1.2);
     filter:brightness(0.9);
