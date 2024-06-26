@@ -3,8 +3,7 @@
         <div class="footer-content">
            <div class="footer-first-row d-flex">
             <div class="column d-flex">
-                <h2>Myfashion</h2>
-                <p>Facebook</p>
+                <LogoComponent/>
             </div>
             <div class="column d-flex">
                 <h3>For Enquiries</h3>
@@ -31,9 +30,18 @@
     </div>
 </template>
 
+<script>
+import LogoComponent from './LogoComponent.vue';
+export default{
+    components:{
+        LogoComponent,
+    }
+}
+</script>
+
 <style scoped>
 .footer{
-    background-color:rgba(128,128,128);
+    background-color:#3a3b3c;
 }
 .footer-content{
     width:85%;
@@ -47,14 +55,14 @@
 .footer-second-row{
     padding:10px 0px;
     justify-content:center;
-    border-top:1px solid #3a3b3c;
+    border-top:1px solid rgba(128,128,128);
 }
 .column{
     flex-direction:column;
     gap:20px;
 }
-p{
-    color:#3a3b3c;
+p,h3{
+    color:rgba(128,128,128);
 
 }
 .column p{

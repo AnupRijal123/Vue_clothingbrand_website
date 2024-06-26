@@ -7,7 +7,7 @@
                         <font-awesome-icon :icon="['fab', 'square-facebook']" class="icon" />
                     </div> 
                 </div>
-               <div class="hamburger-div">
+               <div class="hamburger-div" @click="showMenu">
                 <font-awesome-icon :icon="['fas', 'bars']" class="icon"/>
                </div>
                 <div>
@@ -26,6 +26,15 @@
                 <p class="menu-text">Accessories</p>
                 <p class="menu-text">Sale</p>
             </div>
+
+            <div v-if="showMobileMenu" class="menu-items-for-small-screen">
+                <p class="menu-text">Shop</p>
+                <p class="menu-text">Casuals</p>
+                <p class="menu-text">Ethnics Wear</p>
+                <p class="menu-text">Accessories</p>
+                <p class="menu-text">Sale</p>
+            </div>
+
         </div>
     </div>
 </template>
@@ -38,6 +47,7 @@ export default {
     data() {
         return {
             showNavbar: false,
+            showMobileMenu:false,
         }
     },
     methods: {
@@ -47,6 +57,9 @@ export default {
             } else {
                 this.showNavbar = false;
             }
+        },
+        showMenu(){
+            this.showMobileMenu=!this.showMobileMenu;
         }
     },
     mounted() {
@@ -65,14 +78,13 @@ export default {
     position: fixed;
     z-index: 1;
     width: 100%;
-    border-bottom:1px solid rgba(255,255,255,0.8);
     padding:50px 0px;
     transition: all 0.8s ease;
 }
 
 .white-navbar {
     background-color: #ffffff;
-    padding-top:10px;
+    padding:10px 0px 20px 0px;
 }
 .white-navbar .menu-text{
     color:#111;
@@ -111,7 +123,9 @@ export default {
     cursor:pointer;
 }
 .navbar-second-row{
-    justify-content:space-between;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
 }
 
 .menu-text{
@@ -124,18 +138,23 @@ export default {
 .menu-text:hover{
     transform:scale(1.2);
 }
+.menu-items-for-small-screen{
+    display:none;
+}
 
 @media only screen and (max-width:768px){
 
     .first-row-column{
         display:none;
     }
-    .icons-div{
-        display:none;
-    }
+   
     .navbar-first-row{
         justify-content:center;
         position:relative;
+    }
+    .icons-div{
+        position:absolute;
+        right:0;
     }
     .hamburger-div{
         display:block;
@@ -143,14 +162,24 @@ export default {
         left:0;
         top:20px;
     }
+    .navbar-second-row{
+        display:none;
+    }
+    .menu-items-for-small-screen{
+        display:block;
+        padding-left:30px;
+    }
+    .menu-items-for-small-screen .menu-text{
+        line-height:24px;
+    }
+   
+
 }
 @media only screen and (max-width:500px){
     .navbar-content{
         width:100%;
     }
-    .navbar-second-row{
-        flex-direction:column;
-    }
+   
 }
 </style>
 
