@@ -42,6 +42,7 @@
 .footer-first-row{
     justify-content:space-between;
     padding:80px 0px;
+    flex-wrap:wrap;
 }
 .footer-second-row{
     padding:10px 0px;
@@ -58,12 +59,11 @@ p{
 }
 .column p{
     cursor:pointer;
-    transition:all 0.2s ease;
+    transition:all 0.2s ease;    
 }
 .column p:hover{
     transform:scale(1.1);
     color:#ca94a1;
-
 }
 
 </style>

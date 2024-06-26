@@ -68,10 +68,10 @@ export default {
   opacity:0;
   transition:all 0.5s ease;
   font-size:20px;
-  background-color:rgba(128,128,128);
+  background-color:#ca94a1;
   padding:5px 8px;
   border-radius:50%;
-  color:#3a3b3c;
+  color:#ffffff;
   cursor:pointer;
 }
 .move-up{

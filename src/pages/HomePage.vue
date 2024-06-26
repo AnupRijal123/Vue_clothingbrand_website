@@ -72,7 +72,7 @@ export default {
 
 <style scoped>
 .poster-image {
-    height: 520px;
+    height:100vh;
     width: 100%;
     object-fit: fill;
 }
