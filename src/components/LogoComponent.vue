@@ -1,5 +1,5 @@
 <template>
-    <div class="logo-container" :class="{'white-navbar-logo':whiteNavbar}">
+    <div @click="goToHome" class="logo-container" :class="{'white-navbar-logo':whiteNavbar}">
         <h1 class="logo-heading">Myfashion</h1>
         <p>CLOTHING CO</p>
     </div>
@@ -22,7 +22,11 @@ export default{
         isWhiteNavbar(value){
             this.whiteNavbar=value;
         }
-
+    },
+    methods:{
+        goToHome(){
+            this.$router.push('/');
+        }
     }
 }
 </script>
@@ -57,7 +61,7 @@ p{
     color:#ca94a1;
 }
 .white-navbar-logo h1{
-    color:#ca94a1;
+    color:#3a3b3c;
 }
 .white-navbar-logo p{
     color:#ca94a1

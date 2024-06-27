@@ -20,19 +20,19 @@
                 </div>
             </div>
             <div class="navbar-second-row d-flex">
-                <p class="menu-text">Shop</p>
-                <p class="menu-text">Casuals</p>
-                <p class="menu-text">Ethnics Wear</p>
-                <p class="menu-text">Accessories</p>
-                <p class="menu-text">Sale</p>
+                <p @click="goToDisplayPage('shop')" class="menu-text">Shop</p>
+                <p @click="goToDisplayPage('casuals')" class="menu-text">Casuals</p>
+                <p @click="goToDisplayPage('ethnicsWear')" class="menu-text">Ethnics Wear</p>
+                <p @click="goToDisplayPage('accessories')" class="menu-text">Accessories</p>
+                <p @click="goToDisplayPage('sale')" class="menu-text">Sale</p>
             </div>
 
             <div v-if="showMobileMenu" class="menu-items-for-small-screen">
-                <p class="menu-text">Shop</p>
-                <p class="menu-text">Casuals</p>
-                <p class="menu-text">Ethnics Wear</p>
-                <p class="menu-text">Accessories</p>
-                <p class="menu-text">Sale</p>
+                <p @click="goToDisplayPage('shop')" class="menu-text">Shop</p>
+                <p @click="goToDisplayPage('casuals')" class="menu-text">Casuals</p>
+                <p @click="goToDisplayPage('ethnicsWear')" class="menu-text">Ethnics Wear</p>
+                <p @click="goToDisplayPage('accessories')" class="menu-text">Accessories</p>
+                <p @click="goToDisplayPage('sale')" class="menu-text">Sale</p>
             </div>
 
         </div>
@@ -60,14 +60,19 @@ export default {
         },
         showMenu(){
             this.showMobileMenu=!this.showMobileMenu;
+        },
+        goToDisplayPage(value){
+            this.$router.push(`/${value}`);
         }
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll)
+        
     },
     unmounted() {
         window.removeEventListener('scroll', this.handleScroll)
-    }
+    },
+ 
 }
 
 
@@ -78,7 +83,7 @@ export default {
     position: fixed;
     z-index: 1;
     width: 100%;
-    padding:50px 0px;
+    padding:55px 0px;
     transition: all 0.8s ease;
 }
 
@@ -91,6 +96,9 @@ export default {
 }
 .white-navbar .icon{
     color:#111;
+}
+.white-navbar .with-logo{
+    border-right:1px solid #111;
 }
 .navbar-content{
     width:90%;

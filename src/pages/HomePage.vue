@@ -1,7 +1,16 @@
 <template>
     <div>
         <div class="poster-container">
-            <img class="poster-image" src="../assets/poster/poster1.jpg" alt="poster" />
+            <div class="poster-image-div">
+                <img class="poster-image" :src="require(`@/assets/poster/${posterImage}`)" alt="poster" />
+            </div>
+            <div class="shop-now-div">
+                <p class="shop-now-text">{{ shopNowSection[0].text }}</p>
+                <p class="shop-now-heading">{{shopNowSection[0].heading}}</p>
+            
+                 <CustomButton/>
+
+            </div>
             <div class="fade"></div>
         </div>
 
@@ -23,7 +32,7 @@
             <div class="about-description">
                 <h1>About</h1>
                 <p>
-                    Discover [Clothing Store Name], where style meets affordability.
+                    Discover Myfashion, where style meets affordability.
                     Explore our curated collection of contemporary fashion essentials designed to elevate your wardrobe effortlessly.
                     From everyday basics to standout pieces, find the perfect outfit for every occasion with us.
                 </p>
@@ -32,16 +41,19 @@
 
         <div class="follow-us-container">
             <div class="follow-us-content d-flex">
-                <img src="../assets/modelImages/model.jpg"
+                <div class="model-image-container">
+                    <img src="../assets/modelImages/model.jpg"
                     class="model-image"
                     alt="model"
                 />
+                </div>
                 <div class="follow-us-description">
                     <div class="text-button-div">
                         <h1>
                             Follow us for updates and exclusive offers on our website!
                         </h1>
-                        <button class="main-button follow-us-button d-flex">
+                        
+                        <button class="main-button secondary-button follow-us-button d-flex">
                         <font-awesome-icon :icon="['fab', 'facebook']" class="facebook-icon"/>
                         <span>follow us</span>
                         </button>
@@ -51,35 +63,93 @@
 
         </div>
 
-        
-
-       
-
-
     </div>
 </template>
 
 <script>
 import ItemsComponent from '../components/ItemsComponent';
 import AccessoriesComponent from '../components/AccessoriesComponent';
+import CustomButton from '../components/CustomButton.vue';
 export default {
     components: {
         ItemsComponent,
         AccessoriesComponent,
-    }
+        CustomButton
+    },
+    data(){
+        return{
+            posterImageArray:[
+                'poster1.jpg',
+                'poster2.jpg',
+                'poster3.jpg',
+                'poster4.jpg',
+            ],
+            posterImage:'poster1.jpg',
+            shopNowSection:[
+                {heading:'find your ideal fit',text:'shine with myfashion'},
+                {heading:'celebrity edit',text:'make yourself stylish'}
+            ],
+        }
+    },
+  mounted(){
+   setInterval(()=>{
+    this.posterImage=this.posterImageArray[Math.floor(Math.random()*(this.posterImageArray.length))];
+   },3000);
+},
+
 }
 </script>
 
 <style scoped>
-.poster-image {
+.poster-image-div{
+    width:100%;
     height:100vh;
-    width: 100%;
+    overflow:hidden;
+}
+.poster-image {
+    width:100%;
+    height:100%;
     object-fit: fill;
+    transform:scale(1.2);
+    transition:transform 0.5s ease;
+}
+.poster-image:hover{
+    transform:scale(1);
 }
 
 .poster-container {
     position: relative;
 }
+.shop-now-div{
+    position:absolute;
+    bottom:15%;
+    left:5%;
+}
+.shop-now-div p{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    word-spacing:2px;
+    color:#ffffff;
+}
+.shop-now-div .shop-now-text{
+    font-size:14px;
+}
+.shop-now-div .shop-now-heading{
+    font-size:18px;
+    padding:15px 0px 25px 0px;
+}
+.shop-now-button{
+    background-color:#ffffff;
+    border:1px solid #ffffff;
+    transition:background-color left to right 1s ease;
+}
+.shop-now-button:hover{
+    transform:scale(1);
+    filter:brightness(100%);
+    background:transparent;
+    color:#ffffff;
+}
+
 
 .fade {
     background: linear-gradient(180deg, transparent, rgba(128, 128, 128, 0.4), rgba(128, 128, 128, 0.8));
@@ -134,10 +204,19 @@ export default {
     gap:20px;
     flex-wrap:wrap;
 }
-.model-image{
+.model-image-container{
     width:55%;
     height:400px;
+    overflow:hidden;
+}
+.model-image{
+    width:100%;
+    height:100%;
     object-fit:fill;
+    transition:transform 1.2s ease;
+}
+.model-image:hover{
+    transform:scale(1.5);
 }
 .follow-us-description{
     background-color:#ffffff;
@@ -150,11 +229,10 @@ export default {
     padding-bottom:20px;
 }
 .facebook-icon{
-    color:white;
+    color:#3a3b3c;
     font-size:20px;
 }
 .follow-us-button{
-    background-color:#ca94a1;
     gap:10px;
     align-items:center;
 }
@@ -171,7 +249,7 @@ export default {
     .follow-us-content{
         flex-direction:column;
     }
-    .model-image{
+    .model-image-container{
         width:100%;
     }
     .follow-us-description{

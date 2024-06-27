@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "sweater pantasdasasdasdasdasdasdasdasd",
+        "price": 1800,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": true,
+        "category": "casuals",
+        "isSale": true
+    },
+    {
+        "id": 2,
+        "name": "sweater pantasdasasdasdasdasdasdasdasd",
+        "price": 1800,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": true,
+        "category": "ethnics",
+        "isSale": false
+    },
+    {
+        "id": 3,
+        "name": "sweater pantasdasasdasdasdasdasdasdasd",
+        "price": 1800,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": true,
+        "category": "accessories",
+        "isSale": true
+    }
+]
