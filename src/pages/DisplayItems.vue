@@ -1,11 +1,7 @@
 <template>
     <div class="display-container">
         <div class="display-content">
-            <h1>Display items</h1>
-        <h2>{{ routeName.menuName }}</h2>
-            <!-- <ItemsComponent :itemsArray="allItems"/> -->
-        {{ allItems }}
-        <h1>{{ filteredItems }}</h1>
+            <ItemsComponent v-if="filteredItems.length!==0" :itemsArray="filteredItems"/>
         </div>
         
 
@@ -14,12 +10,12 @@
 
 
 <script>
-// import ItemsComponent from '../components/ItemsComponent';
+import ItemsComponent from '../components/ItemsComponent';
 import AllItems from '../data/allItems.json';
 export default{
-    // components:{
-    //     ItemsComponent,
-    // },
+    components:{
+        ItemsComponent,
+    },
 
     data(){
         return{
@@ -64,15 +60,12 @@ export default{
                     return item.category==='accessories'
                 });
             }
-        }routeName(ro
+        }
     },
     watch:{
-        routeName(routename){
-            console.log('route name',routename.menuName);
-
+        routeName(){
+            //route name change vayo vane yo function call hunxa
             this.displayItemFirstLoad();
-           
-
         }
     }
    
@@ -85,11 +78,14 @@ export default{
 
 <style>
 .display-container{
-    background-color:red;
+    background-color:#3a3b3c;
     padding-top:200px;
 }
 
-
+.display-content{
+    background-color:#ffffff;
+    padding:20px 0px;
+}
 @media only screen and (max-width:768px){
     .display-container{
         padding-top:320px;

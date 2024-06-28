@@ -49,8 +49,23 @@ export default {
         }
     },
     mounted() {
-        console.log(this.items);
+        console.log('itemcomponent',this.items);
+    },
+    watch:{
+        itemsArray(value){
+            console.log('new component',value);
+            this.items=value;
+        }
+        /* DisplayItems component bata yo component ma array prop 
+        ko through bata pathako xa,but uta bata filter gardai array 
+        pathako xa so esma prop receive garda first ma receiver  gareko 
+        initial array matra basirakhyo so watch ma prop ko value change
+        vako hereko ani naya value ayo vane items array ma tyo naya 
+        array rakheko
+        */    
     }
+ 
+  
 }
 </script>
 
