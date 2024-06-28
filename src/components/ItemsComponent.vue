@@ -39,11 +39,13 @@
 
 </template>
 <script>
-import Items from '../data/newCollection.json';
 export default {
+    props:{
+        itemsArray:Array,
+    },
     data() {
         return {
-            items: Items,
+            items: this.itemsArray,
         }
     },
     mounted() {

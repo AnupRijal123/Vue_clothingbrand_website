@@ -44,7 +44,7 @@ export default{
        right:0;
        width:100%;
        height:100%;
-       transition:width 0.4s linear;
+       transition:width 0.3s linear;
 }
 
 .custom-button:hover .white-background{

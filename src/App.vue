@@ -57,9 +57,6 @@ export default {
 }
 </script>
 <style scoped>
-.content-container{
-  padding-bottom:40px;
-}
 .go-to-top{
   position:fixed;
   right:20px;

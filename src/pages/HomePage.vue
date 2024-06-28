@@ -23,7 +23,7 @@
             <h1>New Collection</h1>
         </div>
 
-        <ItemsComponent />
+        <ItemsComponent :itemsArray="newCollection"/>
 
         <div className="accessories-container">
             <h1>Accessories</h1>
@@ -72,6 +72,9 @@ import ItemsComponent from '../components/ItemsComponent';
 import AccessoriesComponent from '../components/AccessoriesComponent';
 import CustomTransparentButton from '../components/CustomTransparentButton.vue';
 import CustomWhiteButton from '../components/CustomWhiteButton.vue';
+
+import NewCollection from '../data/newCollection.json';
+
 export default {
     components: {
         ItemsComponent,
@@ -103,6 +106,7 @@ export default {
                 buttonText:null
             },
 
+                newCollection:NewCollection,
 
 
         }
