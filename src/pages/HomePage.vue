@@ -5,12 +5,17 @@
                 <img class="poster-image" :src="require(`@/assets/poster/${posterImage}`)" alt="poster" />
             </div>
             <div class="shop-now-div">
-                <p class="shop-now-text">{{ shopNowSection[0].text }}</p>
-                <p class="shop-now-heading">{{shopNowSection[0].heading}}</p>
-            
-                 <CustomButton/>
+                <p class="shop-now-text">{{ shopNowSection.text }}</p>
+                <p class="shop-now-heading">{{ shopNowSection.heading }}</p>
 
-            </div>
+                 <CustomTransparentButton 
+                 v-if="shopNowSection.buttonText!==null"
+                  :text="shopNowSection.buttonText"/>
+           
+                </div>
+
+         
+
             <div class="fade"></div>
         </div>
 
@@ -52,11 +57,7 @@
                         <h1>
                             Follow us for updates and exclusive offers on our website!
                         </h1>
-                        
-                        <button class="main-button secondary-button follow-us-button d-flex">
-                        <font-awesome-icon :icon="['fab', 'facebook']" class="facebook-icon"/>
-                        <span>follow us</span>
-                        </button>
+                        <CustomWhiteButton text="follow us"/>
                     </div>
                 </div>
             </div>
@@ -69,12 +70,14 @@
 <script>
 import ItemsComponent from '../components/ItemsComponent';
 import AccessoriesComponent from '../components/AccessoriesComponent';
-import CustomButton from '../components/CustomButton.vue';
+import CustomTransparentButton from '../components/CustomTransparentButton.vue';
+import CustomWhiteButton from '../components/CustomWhiteButton.vue';
 export default {
     components: {
         ItemsComponent,
         AccessoriesComponent,
-        CustomButton
+        CustomTransparentButton,
+        CustomWhiteButton
     },
     data(){
         return{
@@ -83,18 +86,32 @@ export default {
                 'poster2.jpg',
                 'poster3.jpg',
                 'poster4.jpg',
+                'poster5.jpg',
+                'poster6.jpg'
             ],
             posterImage:'poster1.jpg',
-            shopNowSection:[
-                {heading:'find your ideal fit',text:'shine with myfashion'},
-                {heading:'celebrity edit',text:'make yourself stylish'}
+            shopNowSectionArray:[
+                {heading:'find your ideal fit',text:'shine with myfashion',buttonText:'shop now'},
+                {heading:'flat 25% off',text:'end of season sales 2024',buttonText:null},
+                {heading:'celebrity edit',text:'make yourself stylish',buttonText:'take quiz'},
+                {heading:'our accessories',text:'enhance your collection',buttonText:'shop now'}
+
             ],
+            shopNowSection:{
+                heading:'flat 25% off',
+                text:'end of season sales 2024',
+                buttonText:null
+            },
+
+
+
         }
     },
   mounted(){
    setInterval(()=>{
     this.posterImage=this.posterImageArray[Math.floor(Math.random()*(this.posterImageArray.length))];
-   },3000);
+    this.shopNowSection=this.shopNowSectionArray[Math.floor(Math.random()*this.shopNowSectionArray.length)];
+   },4000);
 },
 
 }
@@ -112,18 +129,39 @@ export default {
     object-fit: fill;
     transform:scale(1.2);
     transition:transform 0.5s ease;
+  
 }
 .poster-image:hover{
     transform:scale(1);
 }
+
 
 .poster-container {
     position: relative;
 }
 .shop-now-div{
     position:absolute;
-    bottom:15%;
     left:5%;
+    animation:shopNowDivShowing 4s forwards;
+    animation-iteration-count:infinite;
+}
+@keyframes shopNowDivShowing{
+    0%{
+        opacity:0;
+        bottom:0;
+    }
+    10%{
+        opacity:1;
+        bottom:15%;
+    }
+    80%{
+        opacity:1;
+        bottom:15%;
+    }
+    100%{
+        opacity:0;
+        bottom:0;
+    }
 }
 .shop-now-div p{
     text-transform:uppercase;
@@ -227,14 +265,6 @@ export default {
 }
 .text-button-div h1{
     padding-bottom:20px;
-}
-.facebook-icon{
-    color:#3a3b3c;
-    font-size:20px;
-}
-.follow-us-button{
-    gap:10px;
-    align-items:center;
 }
 
 

@@ -2,10 +2,16 @@
      <div class="custom-button">
                 <div class="white-background"></div>
                 <div class="transparent-background"></div>
-                <p class="custom-button-text">shop now</p>
-               </div>
+                <p class="custom-button-text">{{ text }}</p>
+    </div>
 </template>
-
+<script>
+export default{
+    props:{
+        text:String,
+    }
+}
+</script>
 <style scoped>
 .custom-button{
     background:transparent;
