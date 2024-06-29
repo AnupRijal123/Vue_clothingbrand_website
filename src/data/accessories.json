@@ -1,26 +1,35 @@
 [
     {
         "id": 1,
-        "name": "Bagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        "price": 1800,
-        "discountPercentage": null,
-        "img1": "bag1.jpg",
-        "img2": "bag2.jpg"
+        "name": "clothes",
+        "price": 1200,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": true,
+        "category": "casuals",
+        "isSale": true
     },
     {
         "id": 2,
-        "name": "tshirtasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        "price": 1000,
-        "discountPercentage": 12,
-        "img1": "bag1.jpg",
-        "img2": "bag2.jpg"
+        "name": "kurtha",
+        "price": 800,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": true,
+        "category": "ethnics",
+        "isSale": false
     },
     {
         "id": 3,
-        "name": "shoesasdadddddddddddddddddddddddddddddddddddd",
-        "price": 2000,
-        "discountPercentage": 50,
-        "img1": "bag1.jpg",
-        "img2": "bag2.jpg"
+        "name": "bag",
+        "price": 3000,
+        "discountPercentage": 10,
+        "img1": "item1.jpg",
+        "img2": "item2.jpeg",
+        "isSold": true,
+        "category": "accessories",
+        "isSale": true
     }
 ]

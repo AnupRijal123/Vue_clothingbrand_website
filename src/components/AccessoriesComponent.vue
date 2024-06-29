@@ -1,12 +1,12 @@
 <template>
     <div class="grid-container">
         <div class="card first-card" >
-            <div class="d-flex image-div">
+            <div @click="goToItemInfo(items[0].id)" class="d-flex image-div">
             <img :src="require(`@/assets/items/${items[0].img1}`)" class="card-image card-image1" />
             <img :src="require(`@/assets/items/${items[0].img2}`)" class="card-image card-image2"/>
             </div>
             <div class="card-details d-flex">
-                <h2>{{ items[0].name }}</h2>
+                <h2 @click="goToItemInfo(items[0].id)">{{ items[0].name }}</h2>
                 <div class="price-section d-flex">
                     <s v-if="items[0].discountPercentage">
                     <span>NPR </span>
@@ -23,7 +23,7 @@
                     <span>{{ items[0].price }}</span>
                     </p>
                 </div>
-                <p class="read-more-section">Read More</p>
+                <p @click="goToItemInfo(items[0].id)" class="read-more-section">Read More</p>
             </div>
             <div class="tag" v-if="items[0].discountPercentage">
                 <p>-{{items[0].discountPercentage}}%</p>
@@ -31,12 +31,12 @@
         </div>  
 
         <div class="card second-card" >
-            <div class="d-flex image-div">
+            <div @click="goToItemInfo(items[1].id)" class="d-flex image-div">
             <img :src="require(`@/assets/items/${items[1].img1}`)" class="card-image card-image1" />
             <img :src="require(`@/assets/items/${items[1].img2}`)" class="card-image card-image2"/>
             </div>
             <div class="card-details d-flex">
-                <h2>{{ items[1].name }}</h2>
+                <h2 @click="goToItemInfo(items[1].id)">{{ items[1].name }}</h2>
                 <div class="price-section d-flex">
                     <s v-if="items[1].discountPercentage">
                     <span>NPR </span>
@@ -53,7 +53,7 @@
                     <span>{{ items[1].price }}</span>
                     </p>
                 </div>
-                <p class="read-more-section">Read More</p>
+                <p @click="goToItemInfo(items[1].id)" class="read-more-section">Read More</p>
             </div>
             <div class="tag" v-if="items[1].discountPercentage">
                 <p>-{{items[1].discountPercentage}}%</p>
@@ -61,12 +61,12 @@
         </div>  
 
         <div class="card third-card" >
-            <div class="d-flex image-div">
+            <div @click="goToItemInfo(items[2].id)" class="d-flex image-div">
             <img :src="require(`@/assets/items/${items[2].img1}`)" class="card-image card-image1" />
             <img :src="require(`@/assets/items/${items[2].img2}`)" class="card-image card-image2"/>
             </div>
             <div class="card-details d-flex">
-                <h2>{{ items[2].name }}</h2>
+                <h2 @click="goToItemInfo(items[2].id)">{{ items[2].name }}</h2>
                 <div class="price-section d-flex">
                     <s v-if="items[2].discountPercentage">
                     <span>NPR </span>
@@ -83,7 +83,7 @@
                     <span>{{ items[2].price }}</span>
                     </p>
                 </div>
-                <p class="read-more-section">Read More</p>
+                <p @click="goToItemInfo(items[2].id)" class="read-more-section">Read More</p>
             </div>
             <div class="tag" v-if="items[2].discountPercentage">
                 <p>-{{items[2].discountPercentage}}%</p>
@@ -108,9 +108,12 @@ export default {
             items: Items,
         }
     },
-    mounted() {
-        console.log(this.items);
+    methods:{
+        goToItemInfo(itemId){
+            this.$router.push(`/item/${itemId}`);
+        }
     }
+
 }
 </script>
 
@@ -156,6 +159,7 @@ export default {
 
 .image-div{
     position:relative;
+    overflow:hidden;
 }
 .card-image1,.card-image2{
     position:absolute;

@@ -76,7 +76,7 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 .display-container{
     background-color:#3a3b3c;
     padding-top:200px;

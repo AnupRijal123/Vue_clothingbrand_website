@@ -69,10 +69,10 @@ p{
 
 @media only screen and (max-width:768px){
     h1{
-        font-size:60px;
+        font-size:40px;
     }
     P{
-        font-size:18px;
+        font-size:16px;
     }
 }
 </style>

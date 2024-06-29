@@ -8,9 +8,12 @@
                 <p class="shop-now-text">{{ shopNowSection.text }}</p>
                 <p class="shop-now-heading">{{ shopNowSection.heading }}</p>
 
-                 <CustomTransparentButton 
+                 <div @click="goToShop">
+                    <CustomTransparentButton 
                  v-if="shopNowSection.buttonText!==null"
-                  :text="shopNowSection.buttonText"/>
+                  :text="shopNowSection.buttonText"
+                  />
+                 </div>
            
                 </div>
 
@@ -96,7 +99,7 @@ export default {
             shopNowSectionArray:[
                 {heading:'find your ideal fit',text:'shine with myfashion',buttonText:'shop now'},
                 {heading:'flat 25% off',text:'end of season sales 2024',buttonText:null},
-                {heading:'celebrity edit',text:'make yourself stylish',buttonText:'take quiz'},
+                {heading:'celebrity edit',text:'make yourself stylish',buttonText:'explore'},
                 {heading:'our accessories',text:'enhance your collection',buttonText:'shop now'}
 
             ],
@@ -117,6 +120,11 @@ export default {
     this.shopNowSection=this.shopNowSectionArray[Math.floor(Math.random()*this.shopNowSectionArray.length)];
    },4000);
 },
+methods:{
+    goToShop(){
+        this.$router.push('/categories/shop');
+    }
+}
 
 }
 </script>

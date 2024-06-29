@@ -14,7 +14,7 @@
         "id": 2,
         "name": "kurtha",
         "price": 800,
-        "discountPercentage": 10,
+        "discountPercentage": null,
         "img1": "item1.jpg",
         "img2": "item2.jpeg",
         "isSold": true,
@@ -28,7 +28,7 @@
         "discountPercentage": 10,
         "img1": "item1.jpg",
         "img2": "item2.jpeg",
-        "isSold": true,
+        "isSold": false,
         "category": "accessories",
         "isSale": true
     }

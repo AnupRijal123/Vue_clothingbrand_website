@@ -1,12 +1,12 @@
 <template>
     <div class="grid-container">
         <div class="card" v-for="item in items" :key="item.id">
-            <div class="d-flex">
+            <div @click="goToItemInfo(item.id)" class="d-flex">
             <img :src="require(`@/assets/items/${item.img1}`)" class="card-image card-image1" />
             <img :src="require(`@/assets/items/${item.img2}`)" class="card-image card-image2"/>
             </div>
             <div class="card-details d-flex">
-                <h2>{{ item.name }}</h2>
+                <h2 @click="goToItemInfo(item.id)">{{ item.name }}</h2>
                 <div class="price-section d-flex">
                     <s v-if="item.discountPercentage" class="grey-text">
                     <span>NPR </span>
@@ -23,7 +23,7 @@
                     <span>{{ item.price }}</span>
                     </p>
                 </div>
-                <p class="read-more-section">Read More</p>
+                <p @click="goToItemInfo(item.id)" class="read-more-section">Read More</p>
             </div>
             <div class="tag" v-if="item.isSold||item.discountPercentage">
                 <p v-if="item.isSold">Sold Out</p>
@@ -63,6 +63,12 @@ export default {
         vako hereko ani naya value ayo vane items array ma tyo naya 
         array rakheko
         */    
+    },
+    methods:{
+        goToItemInfo(itemId){
+            console.log(itemId);
+            this.$router.push(`/item/${itemId}`);
+        }
     }
  
   
@@ -142,9 +148,11 @@ export default {
     margin:0;
     font-size:18px;
     word-break:break-all;
+    cursor:pointer;
 }
 .price-section{
     gap:10px;
+    align-items:center;
 }
 .grey-text{
     color:rgba(128,128,128);
@@ -164,7 +172,8 @@ export default {
 
 @media only screen and (max-width:1352px){
     .grid-container{
-        justify-content:center;
+        justify-content:space-around;
+
     }
 }
 

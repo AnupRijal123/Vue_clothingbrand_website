@@ -8,8 +8,9 @@
                     </div> 
                 </div>
                <div class="hamburger-div" @click="showMenu">
-                <font-awesome-icon :icon="['fas', 'bars']" class="icon"/>
-               </div>
+                <font-awesome-icon v-if="showMobileMenu==false" :icon="['fas', 'bars']" class="icon"/>
+                <font-awesome-icon v-if="showMobileMenu" :icon="['fas', 'xmark']" class="icon" />
+                </div>
                 <div>
                    <LogoComponent :isWhiteNavbar="showNavbar"/>
                 </div>
@@ -62,7 +63,8 @@ export default {
             this.showMobileMenu=!this.showMobileMenu;
         },
         goToDisplayPage(value){
-            this.$router.push(`/${value}`);
+            this.$router.push(`/categories/${value}`);
+            this.showMobileMenu=false;
         }
     },
     mounted() {
