@@ -1,6 +1,6 @@
 <template>
     <div v-if="selectedItem.length!==0" class="item-info-container">
-       <div className="item-info-content-container">
+       <div class="item-info-content-container">
         <div class="item-info-content">
             <div class="item-info-heading">
                 <div class="breadcrumb">
@@ -14,21 +14,43 @@
 
             <div class="item-display-div d-flex">
                <div class="images-list d-flex">
-                <div className="list-image-div active-image">
-                    <img :src="require('@/assets/items/item1.jpg')" class="list-image"/>
+                <div @click="selectImage(selectedItem[0].img1)" class="list-image-div" :class="{'active-image':selectedImage===selectedItem[0].img1}">
+                    <img :src="require(`@/assets/items/${selectedItem[0].img1}`)" class="list-image"/>
                 </div>
 
-                <div className="list-image-div">
-                    <img :src="require('@/assets/items/item1.jpg')" class="list-image"/>
+                <div  @click="selectImage(selectedItem[0].img2)" class="list-image-div" :class="{'active-image':selectedImage===selectedItem[0].img2}">
+                    <img :src="require(`@/assets/items/${selectedItem[0].img2}`)" class="list-image"/>
                 </div>
 
                </div>
 
-               <div>
-                    <img :src="require('../assets/items/item1.jpg')" class="item-image"/>
-               </div>
+               <div class="main-image-container">
+                    <div class="scrollable-image-container"                  
+                            
 
-                <div className="item-description-container d-flex">
+                            :class="{'move-scrollable-container-left':moveLeft,
+                                    'move-scrollable-container-right':moveRight
+                                    }"
+
+        
+                    >
+                        <img :src="require(`../assets/items/${selectedItem[0].img1}`)" class="item-image"/>
+                        <img :src="require(`../assets/items/${selectedItem[0].img2}`)" class="item-image"/>
+                    </div>
+                    <div class="tag" v-if="selectedItem[0].isSold||selectedItem[0].discountPercentage">
+                            <p v-if="selectedItem[0].isSold">sold out</p>
+                            <p v-if="!selectedItem[0].isSold && selectedItem[0].discountPercentage">
+                                -{{selectedItem[0].discountPercentage}}%
+                            </p>
+                    </div>
+
+                    <div @click="goLeft" class="left-button image-navigate-button">left</div>
+                    <div @click="goRight" class="right-button image-navigate-button">right</div>
+
+
+                </div>
+
+                <div class="item-description-container d-flex">
                    <div>
                     <h2>{{ selectedItem[0].name }}</h2>
                     <div class="price-div d-flex">
@@ -42,10 +64,28 @@
                         <p v-if="!selectedItem[0].discountPercentage">NPR {{selectedItem[0].price}}</p>
                     </div>
                     <p v-if="selectedItem[0].isSold">Out of stock</p> 
+                    <div v-if="!selectedItem[0].isSold" class="button-div">
+
+                        <CustomWhiteButton text="add to cart"/>
+
+                    </div>
+                   </div>
+
+                   <div class="size-div d-flex">
+                    <p>size:</p>
+                    <div 
+                    
+                    v-for="size in selectedItem[0].size" :key="size"
+                    @click="selectSize(size)" 
+                    :class="size===selectedSize?'active-size size-box':'size-box'">
+                        <p>{{size}}</p>
+                    </div>
+
+                    <p v-if="!selectedItem[0].size">N/A</p>
                    </div>
 
                    <div class="description-and-review-div">
-                        <div className="description-row">
+                        <div class="description-row">
                             <div @click="showDescription" class="description-heading d-flex">
                                 <h3>Description</h3> 
                                
@@ -56,10 +96,10 @@
                             <div :class="`description  ${showDescriptionDiv?'take-full-height':'description'}`"  >
                                 <p class="heading-text">Features</p>
                                     
-                                <div>
-                                    <li>hello</li>
-                                    <li>bye</li>
-                                    <li>hello</li>
+                                <div class="description-list">
+                                    <li  v-for="description in selectedItem[0].description" :key="description">
+                                        {{description}}
+                                    </li> 
                                 </div>
 
                                 <p class="heading-text">Made in china</p>
@@ -67,6 +107,9 @@
                             </div>
                         </div>
                    </div>
+
+                  
+
 
                 </div>
             </div>
@@ -81,24 +124,33 @@
 
 <script>
 import AllItems from '../data/allItems.json';
+import CustomWhiteButton from '../components/CustomWhiteButton.vue';
 
 export default{
+    components:{
+        CustomWhiteButton,
+    },
     data(){
         return{
             itemID:null,
             allItems:AllItems,
             selectedItem:[],
             showDescriptionDiv:false,
+            selectedImage:'',
+            selectedSize:'',
+            moveLeft:false,
+            moveRight:false,
            
         }
     },
    mounted(){
+    window.scrollTo(0,0);
     this.itemID=parseInt(this.$route.params.id);
        this.selectedItem=this.allItems.filter((item)=>{
             return item.id===this.itemID
         });
         console.log('selected item',this.selectedItem);
-
+        this.selectedImage=this.selectedItem[0].img1;
    },
    methods:{
     showDescription(){
@@ -118,9 +170,38 @@ export default{
         if(categoryName==='accessories'){
             this.$router.push('/categories/accessories');
         }
-    }
-   }
+    },
+        selectImage(image){
+        this.selectedImage=image;
+        console.log(this.selectedImage);
 
+        if(this.selectedImage===this.selectedItem[0]?.img1){
+            this.goLeft();
+        }
+        if(this.selectedImage===this.selectedItem[0]?.img2){
+            this.goRight();
+        }
+
+
+        },
+
+        selectSize(size){
+            this.selectedSize=size;
+        },
+
+        goLeft(){
+            this.moveRight=false;
+            this.moveLeft=true;
+        },  
+
+        goRight(){
+            this.moveLeft=false;
+            this.moveRight=true;
+        }
+
+       
+
+   }
    }
    
 
@@ -164,6 +245,7 @@ export default{
  .item-display-div{
     gap:20px;
     flex-wrap:wrap;
+    padding-bottom:24px;
  }
  .images-list{
     flex-direction:column;
@@ -173,6 +255,7 @@ export default{
  .list-image-div{
     width:60px;
     height:60px;
+    cursor:pointer;
  }
  .active-image{
     border:2px solid #3a3b3c;
@@ -182,10 +265,68 @@ export default{
    height:100%;
    object-fit:cover;
  }
- .item-image{
+ .main-image-container{
     width:500px;
     height:300px;
+    position:relative;
+    overflow:hidden;
+}
+.scrollable-image-container{
+    display:flex;
+    width:100%;
+    height:100%;
+}
+
+.move-scrollable-container-left{
+    animation:moveLeft 1s forwards;
+}
+@keyframes moveLeft{
+    0%{
+        transform:translateX(-500px);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+.move-scrollable-container-right{
+    animation:moveRight 1s forwards;
+}
+@keyframes moveRight{
+    0%{
+        transform:translate(0);
+    }
+    100%{
+        transform:translateX(-500px);
+    }
+}
+.tag{
+    position:absolute;
+    top:10px;
+    left:10px;
+}
+.image-navigate-button{
+    background-color:yellow;
+    position:absolute;
+    top:50%;
+    cursor:pointer;
+}
+.left-button{
+    background-color:purple;
+    left:0;
+}
+.right-button{
+    background-color:green;
+    right:0;
+}
+ .item-image{
+    width:100%;
+    height:100%;
+    flex-shrink:0;
  }
+ .button-div{
+    background-color:red;
+ }
+
  .item-description-container{
     flex:1;
     padding:10px;
@@ -202,13 +343,50 @@ export default{
     color:rgba(128,128,128);
  }
 
+ .size-div{
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+ }
+ .size-box{
+    width: 40px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    border:1px solid rgba(128,128,128);
+    border-radius:5px;
+    transition:transform 0.3s ease;
+ }
+ .size-box:hover{   
+    transform:scale(1.1);
+ }
+ .size-box p{
+    color:rgba(128,128,128);
+    text-align:center;
+
+ }
+ .active-size{
+    transform:scale(1.2);
+    border-color:#111;
+ }
+ .active-size p{
+    color:#111;
+    font-weight:600;
+ }
+ .active-size:hover{
+    transform:scale(1.2);
+ }
+
  .description-row{
-    padding-bottom:15px;
+    padding-bottom:10px;
     border-bottom:1px solid rgba(128,128,128);
  }
+ 
  .description-heading{
     justify-content:space-between;
-    padding-bottom:15px;
+    padding-bottom:10px;
     cursor:pointer;
  }
  .heading-text{
@@ -226,8 +404,11 @@ export default{
     overflow:hidden;
     transition:height 0.5s ease;
  }
+ .description-list{
+    padding-left:5px;
+ }
  .take-full-height{
-    height:140px;
+    height:120px;
     overflow-y:scroll;
  }
  .take-full-height::-webkit-scrollbar{
@@ -244,10 +425,9 @@ export default{
         flex-direction:row; 
     }
     .item-display-div{
-        background-color:purple;
         flex-direction:column;
     }
-    .item-image{
+    .main-image-container{
         width:90%;
     }
     .item-info-container{

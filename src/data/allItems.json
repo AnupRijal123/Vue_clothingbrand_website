@@ -1,8 +1,18 @@
 [
     {
         "id": 1,
-        "name": "clothes",
+        "name": "Tshirt",
         "price": 1200,
+        "description": [
+            "100% pure cotton",
+            "relaxed fit",
+            "size s,m,l,xl,xxl"
+        ],
+        "size": [
+            "m",
+            "l",
+            "xl"
+        ],
         "discountPercentage": 10,
         "img1": "item1.jpg",
         "img2": "item2.jpeg",
@@ -14,6 +24,18 @@
         "id": 2,
         "name": "kurtha",
         "price": 800,
+        "description": [
+            "100% pure cotton",
+            "relaxed fit",
+            "size s,m,l,xl,xxl"
+        ],
+        "size": [
+            "m",
+            "l",
+            "xl",
+            "xxl",
+            "xxxl"
+        ],
         "discountPercentage": null,
         "img1": "item1.jpg",
         "img2": "item2.jpeg",
@@ -25,6 +47,11 @@
         "id": 3,
         "name": "bag",
         "price": 3000,
+        "description": [
+            "100% pure cotton",
+            "relaxed fit",
+            "size s,m,l,xl,xxl"
+        ],
         "discountPercentage": 10,
         "img1": "item1.jpg",
         "img2": "item2.jpeg",

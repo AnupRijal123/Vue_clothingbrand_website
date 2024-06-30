@@ -7,14 +7,15 @@
             </div>
             <div class="column d-flex">
                 <h3>For Enquiries</h3>
-                <p>enquiry@myfashion.com</p>
+                <p class="link-text">enquiry@myfashion.com</p>
             </div>
 
             <div class="column d-flex">
                 <h3>Links</h3>
                <div>
-                <p>location</p>
-                <p>about</p>
+                <p class="link-text">Location : Sitapaila,kathmandu</p>
+                <p class="link-text">Facebook Page</p>
+                <p>contact:(+977)9812345678,01-4123456</p>
                </div>
             </div>
            </div>
@@ -65,12 +66,13 @@ p,h3{
     color:rgba(128,128,128);
 
 }
-.column p{
+
+.link-text{
     cursor:pointer;
-    transition:all 0.2s ease;    
+    transition:all 0.3s ease;
 }
-.column p:hover{
-    transform:scale(1.1);
+.link-text:hover{
+    transform:scale(1.05);
     color:#ca94a1;
 }
 

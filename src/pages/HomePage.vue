@@ -28,7 +28,7 @@
 
         <ItemsComponent :itemsArray="newCollection"/>
 
-        <div className="accessories-container">
+        <div class="accessories-container">
             <h1>Accessories</h1>
             <AccessoriesComponent />
         </div>
@@ -140,7 +140,7 @@ methods:{
     height:100%;
     object-fit: fill;
     transform:scale(1.2);
-    transition:transform 0.5s ease;
+    transition:transform 0.7s ease;
   
 }
 .poster-image:hover{

@@ -31,6 +31,7 @@ export default{
     },
     mounted(){
         this.displayItemFirstLoad();
+        window.scrollTo(0,0);
     },
     methods:{
         displayItemFirstLoad(){

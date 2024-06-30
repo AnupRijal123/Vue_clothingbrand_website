@@ -158,18 +158,10 @@ export default {
     color:rgba(128,128,128);
 }
 .tag{
-    background-color:#ca94a1;
-    position:absolute;
-    top:5px;
-    left:5px;
-    padding:3px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
 }
-.tag p{
-    color:#ffffff;
-    font-size:12px;
-    font-weight:600;
-}
-
 @media only screen and (max-width:1352px){
     .grid-container{
         justify-content:space-around;
