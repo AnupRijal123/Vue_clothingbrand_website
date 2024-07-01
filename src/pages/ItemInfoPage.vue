@@ -44,8 +44,12 @@
                             </p>
                     </div>
 
-                    <div @click="goLeft" class="left-button image-navigate-button">left</div>
-                    <div @click="goRight" class="right-button image-navigate-button">right</div>
+                    <div @click="goLeft" class="left-button image-navigate-button">
+                        <font-awesome-icon :icon="['fas', 'angle-left']" class="angle-icon"/>
+                    </div>
+                    <div @click="goRight" class="right-button image-navigate-button">
+                        <font-awesome-icon :icon="['fas', 'angle-right']" class="angle-icon"/>
+                    </div>
 
 
                 </div>
@@ -299,25 +303,31 @@ export default{
         transform:translateX(-500px);
     }
 }
+
 .tag{
     position:absolute;
     top:10px;
     left:10px;
 }
 .image-navigate-button{
-    background-color:yellow;
+    background-color:#ffffff;
     position:absolute;
     top:50%;
     cursor:pointer;
+    padding:10px 20px;
+    border-radius:50%;
 }
 .left-button{
-    background-color:purple;
-    left:0;
+    left:10px;
 }
 .right-button{
-    background-color:green;
-    right:0;
+    right:10px;
 }
+.angle-icon{
+    font-size:30px;
+    color:rgba(128,128,128) !important ;
+}
+
  .item-image{
     width:100%;
     height:100%;

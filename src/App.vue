@@ -1,5 +1,6 @@
 <template>
   <div class="main-container">
+    <TopBannerComponent/>
     <NavbarComponent />
     <div class="content-container">
       <router-view></router-view>
@@ -15,11 +16,12 @@
 import './base.css';
 import NavbarComponent from './components/NavbarComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
-
+import TopBannerComponent from './components/TopBannerComponent.vue'
 
 export default {
   name: 'App',
   components: {
+    TopBannerComponent,
     NavbarComponent,
     FooterComponent,
   },

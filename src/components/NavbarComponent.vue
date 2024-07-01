@@ -83,15 +83,17 @@ export default {
 <style scoped>
 .navbar {
     position: fixed;
+    top:50px;
     z-index: 1;
     width: 100%;
-    padding:55px 0px;
+    padding:20px 0px;
     transition: all 0.8s ease;
 }
 
 .white-navbar {
     background-color: #ffffff;
     padding:10px 0px 20px 0px;
+    top:0;
 }
 .white-navbar .menu-text{
     color:#111;

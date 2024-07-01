@@ -13,8 +13,12 @@
             <div class="column d-flex">
                 <h3>Links</h3>
                <div>
-                <p class="link-text">Location : Sitapaila,kathmandu</p>
-                <p class="link-text">Facebook Page</p>
+                <p>Location</p>
+                <p class="link-text">
+                    <font-awesome-icon :icon="['fas', 'location-dot']" />
+                    Sitapaila,kathmandu
+                </p>
+                <p class="link-text">Our Facebook Page</p>
                 <p>contact:(+977)9812345678,01-4123456</p>
                </div>
             </div>
@@ -22,6 +26,17 @@
 
            <div class="footer-second-row d-flex">
             <p>All rights reserved &copy; 2024 Myfashion</p>
+            <div class="github-link-div d-flex">
+                <p>Developed by Anup Rijal</p>
+                
+                <a href="https://github.com/AnupRijal123/Vue_clothingbrand_website/tree/development-branch">
+                    <div class="code-link-div d-flex">
+                    <p>code</p>
+                    <font-awesome-icon :icon="['fab', 'github']" class="github-icon"/>
+                    </div>
+                </a>
+
+            </div>
            </div>
 
 
@@ -55,7 +70,8 @@ export default{
 }
 .footer-second-row{
     padding:10px 0px;
-    justify-content:center;
+    flex-direction:column;
+    align-items:center;
     border-top:1px solid rgba(128,128,128);
 }
 .column{
@@ -70,10 +86,31 @@ p,h3{
 .link-text{
     cursor:pointer;
     transition:all 0.3s ease;
+    line-height:30px;
 }
 .link-text:hover{
     transform:scale(1.05);
-    color:#ca94a1;
+}
+.github-link-div{
+    gap:10px;
+    flex-wrap:wrap;
+}
+.github-link-div p{
+    font-size:14px;
+    color:#111;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline rgba(128,128,128);
+}
+.code-link-div{
+    align-items:center;
+    gap:5px;
+}
+.github-icon{
+    color:#ffffff;
 }
 
 </style>

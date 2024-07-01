@@ -228,6 +228,7 @@ methods:{
     flex-wrap:wrap;
 }
 .about-image{
+    filter:brightness(60%);
     width:50%;
     height:450px;
     object-fit:fill;
