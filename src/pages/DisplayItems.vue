@@ -1,6 +1,9 @@
 <template>
     <div class="display-container">
         <div class="display-content">
+            <div v-if="showNotFound">
+                <NoItemFoundComponent/>
+            </div>
             <ItemsComponent v-if="filteredItems.length!==0" :itemsArray="filteredItems"/>
         </div>
         
@@ -12,15 +15,18 @@
 <script>
 import ItemsComponent from '../components/ItemsComponent';
 import AllItems from '../data/allItems.json';
+import NoItemFoundComponent from '../components/NoItemFoundComponent.vue';
 export default{
     components:{
         ItemsComponent,
+        NoItemFoundComponent
     },
 
     data(){
         return{
             allItems:AllItems,
             filteredItems:[],
+            showNotFound:false,
         }
     },
 
@@ -38,29 +44,38 @@ export default{
             console.log(this.routeName.menuName)
             if(this.routeName.menuName==='shop'){
                 this.filteredItems=this.allItems;
+                this.showNotFound=false;
             }
-            if(this.routeName.menuName==='sale'){
+            else if(this.routeName.menuName==='sale'){
                 this.filteredItems=this.allItems.filter((item)=>{
                     return item.isSale===true;
                 });
+                this.showNotFound=false;
             }
                 
-            if(this.routeName.menuName==='casuals'){
+            else if(this.routeName.menuName==='casuals'){
                 this.filteredItems=this.allItems.filter((item)=>{
                     return item.category==='casuals'
-
                 });
+                this.showNotFound=false;
             }
-            if(this.routeName.menuName==='ethnicsWear'){
+            else if(this.routeName.menuName==='ethnicsWear'){
                 this.filteredItems=this.allItems.filter((item)=>{
                     return item.category==='ethnics'
                 });
+                this.showNotFound=false;
             }
-            if(this.routeName.menuName==='accessories'){
+            else if(this.routeName.menuName==='accessories'){
                 this.filteredItems=this.allItems.filter((item)=>{
                     return item.category==='accessories'
                 });
+                this.showNotFound=false;
             }
+            else{
+                this.showNotFound=true;
+            }
+          
+            
         }
     },
     watch:{

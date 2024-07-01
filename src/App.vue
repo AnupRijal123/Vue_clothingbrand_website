@@ -5,7 +5,7 @@
     <div class="content-container">
       <router-view></router-view>
       <div @click="goToTop" class="go-to-top" :class="{'move-up':showNavigateButton}">
-        <font-awesome-icon :icon="['fas', 'angle-up']" />
+        <font-awesome-icon :icon="['fas', 'angle-up']" class="icon"/>
       </div>
     </div>
     <FooterComponent/>

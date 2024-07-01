@@ -131,7 +131,7 @@ export default {
     display:none;
 }
 .hamburger-div .icon{
-    font-size:60px;
+    font-size:30px;
     cursor:pointer;
 }
 .navbar-second-row{

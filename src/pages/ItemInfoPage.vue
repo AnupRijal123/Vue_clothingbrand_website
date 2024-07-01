@@ -1,6 +1,7 @@
 <template>
     <div v-if="selectedItem.length!==0" class="item-info-container">
        <div class="item-info-content-container">
+     
         <div class="item-info-content">
             <div class="item-info-heading">
                 <div class="breadcrumb">
@@ -106,7 +107,7 @@
                                     </li> 
                                 </div>
 
-                                <p class="heading-text">Made in china</p>
+                                <p class="heading-text">Made in {{selectedItem[0].madeIn}}</p>
 
                             </div>
                         </div>
@@ -144,6 +145,7 @@ export default{
             selectedSize:'',
             moveLeft:false,
             moveRight:false,
+            showNotFound:false,
            
         }
     },
@@ -333,9 +335,7 @@ export default{
     height:100%;
     flex-shrink:0;
  }
- .button-div{
-    background-color:red;
- }
+
 
  .item-description-container{
     flex:1;
@@ -437,12 +437,31 @@ export default{
     .item-display-div{
         flex-direction:column;
     }
-    .main-image-container{
-        width:90%;
-    }
+   
     .item-info-container{
         padding-top:320px;
     }
  
+}
+@media only screen and (max-width:550px){
+    .main-image-container{
+        width:300px;
+    }
+    @keyframes moveLeft{
+    0%{
+        transform:translateX(-300px);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+@keyframes moveRight{
+    0%{
+        transform:translate(0);
+    }
+    100%{
+        transform:translateX(-300px);
+    }
+}
 }
 </style>

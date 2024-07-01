@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../pages/HomePage.vue';
 import DisplayItems from '../pages/DisplayItems.vue';
 import ItemInfoPage from '../pages/ItemInfoPage.vue';
-
+import PageNotFoundPage from '../pages/PageNotFoundPage.vue';
 
 const routes = [
   {
@@ -20,6 +20,11 @@ const routes = [
     path: '/item/:id',
     name: 'ItemInfoPage',
     component: ItemInfoPage,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'PageNotFoundPage',
+    component: PageNotFoundPage,
   }
 
 

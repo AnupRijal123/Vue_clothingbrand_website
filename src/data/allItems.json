@@ -18,6 +18,7 @@
         "img2": "item2.jpeg",
         "isSold": true,
         "category": "casuals",
+        "madeIn": "china",
         "isSale": true
     },
     {
@@ -41,6 +42,7 @@
         "img2": "item2.jpeg",
         "isSold": true,
         "category": "ethnics",
+        "madeIn": "india",
         "isSale": false
     },
     {
@@ -57,6 +59,7 @@
         "img2": "item2.jpeg",
         "isSold": false,
         "category": "accessories",
+        "madeIn": "usa",
         "isSale": true
     }
 ]
