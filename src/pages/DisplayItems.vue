@@ -41,7 +41,6 @@ export default{
     },
     methods:{
         displayItemFirstLoad(){
-            console.log(this.routeName.menuName)
             if(this.routeName.menuName==='shop'){
                 this.filteredItems=this.allItems;
                 this.showNotFound=false;
@@ -82,6 +81,7 @@ export default{
         routeName(){
             //route name change vayo vane yo function call hunxa
             this.displayItemFirstLoad();
+            window.scrollTo(0,0);
         }
     }
    

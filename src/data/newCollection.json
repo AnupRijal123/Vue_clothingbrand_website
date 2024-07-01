@@ -1,35 +1,159 @@
 [
     {
-        "id": 1,
-        "name": "clothes",
-        "price": 1200,
-        "discountPercentage": 10,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
+        "id": 10,
+        "name": "Women's Beaded Blouson-Sleeve Gown",
+        "price": 10000,
+        "description": [
+            "Sequin & beading design throughout; blouson bodice",
+            "Damage to beading can occur during try-on or wear",
+            "Gown: Floor-length formal dress",
+            "Boat neckline; Gown silhouette"
+        ],
+        "size": [
+            "4",
+            "6",
+            "10"
+        ],
+        "discountPercentage": 5,
+        "img1": "Women's Beaded Blouson-Sleeve Gown1.jpg",
+        "img2": "Women's Beaded Blouson-Sleeve Gown2.jpg",
+        "isSold": false,
+        "category": "ethnics",
+        "madeIn": "india",
+        "isSale": false
+    },
+    {
+        "id": 7,
+        "name": "Women's Tie-Dye Puff-Sleeve Top",
+        "price": 3000,
+        "description": [
+            "Round neckline keyhole and button closure at back",
+            "Printed",
+            "Short puff sleeves"
+        ],
+        "size": [
+            "xxs",
+            "m"
+        ],
+        "discountPercentage": 60,
+        "img1": "Women's Tie-Dye Puff-Sleeve Top1.jpg",
+        "img2": "Women's Tie-Dye Puff-Sleeve Top2.jpg",
         "isSold": true,
         "category": "casuals",
+        "madeIn": "usa",
+        "isSale": true
+    },
+    {
+        "id": 6,
+        "name": "Women's Printed Blouson-Sleeve Maxi Dress",
+        "price": 6000,
+        "description": [
+            "Long blouson sleeves; elasticated cuffs",
+            "Lined",
+            "V-neck; Sheath silhouette",
+            "Foil printed; pleated empire waist; center front ruching"
+        ],
+        "size": [
+            "10",
+            "12",
+            "14"
+        ],
+        "discountPercentage": null,
+        "img1": "Women's Printed Blouson-Sleeve Maxi Dress1.jpg",
+        "img2": "Women's Printed Blouson-Sleeve Maxi Dress2.jpg",
+        "isSold": true,
+        "category": "ethnics",
+        "madeIn": "india",
+        "isSale": true
+    },
+    {
+        "id": 4,
+        "name": "Women's Packable Hooded Puffer Coat, Created for Macy's",
+        "price": 5000,
+        "description": [
+            "Water-resistant",
+            "Two side zipper pockets; two open inner pockets",
+            "Stand collar with zip-off hood; front zipper closure"
+        ],
+        "size": [
+            "l",
+            "xl",
+            "2xl"
+        ],
+        "discountPercentage": 5,
+        "img1": "Women's Packable Hooded Puffer Coat, Created for Macy's1.jpg",
+        "img2": "Women's Packable Hooded Puffer Coat, Created for Macy's2.jpg",
+        "isSold": false,
+        "category": "casuals",
+        "madeIn": "china",
+        "isSale": false
+    },
+    {
+        "id": 8,
+        "name": "Women's Mixed Media Puff Sleeve Bouquet Knit Top",
+        "price": 2500,
+        "description": [
+            "Puffed sheer short sleeves with floral detailing",
+            "Crewneck",
+            "Short puff sleeves"
+        ],
+        "size": [
+            "xs",
+            "s",
+            "m",
+            "l"
+        ],
+        "discountPercentage": 45,
+        "img1": "Women's Mixed Media Puff Sleeve Bouquet Knit Top1.jpg",
+        "img2": "Women's Mixed Media Puff Sleeve Bouquet Knit Top2.jpg",
+        "isSold": false,
+        "category": "casuals",
+        "madeIn": "usa",
+        "isSale": true
+    },
+    {
+        "id": 9,
+        "name": "Women's Printed Flutter-Sleeve Midi Dress",
+        "price": 4000,
+        "description": [
+            " Smooth, sheer woven fabric",
+            "Floor-length formal dress",
+            "Boat neckline; Gown silhouette",
+            "Embellished top",
+            "Back zipper closure"
+        ],
+        "size": [
+            "s",
+            "m",
+            "l"
+        ],
+        "discountPercentage": 20,
+        "img1": "Women's Printed Flutter-Sleeve Midi Dress1.jpg",
+        "img2": "Women's Printed Flutter-Sleeve Midi Dress2.jpg",
+        "isSold": false,
+        "category": "ethnics",
+        "madeIn": "india",
         "isSale": true
     },
     {
         "id": 2,
-        "name": "kurtha",
-        "price": 800,
-        "discountPercentage": 10,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
+        "name": "Women's Polo Collar Button Down Colorblocked Jacket",
+        "price": 3500,
+        "description": [
+            "Spread collar; front button closures",
+            "Long sleeve",
+            "Colorblocked design"
+        ],
+        "size": [
+            "s",
+            "m"
+        ],
+        "discountPercentage": 15,
+        "img1": "Women's Polo Collar Button Down Colorblocked Jacket1.jpg",
+        "img2": "Women's Polo Collar Button Down Colorblocked Jacket1.jpg",
         "isSold": true,
-        "category": "ethnics",
+        "category": "casuals",
+        "madeIn": "china",
         "isSale": false
-    },
-    {
-        "id": 3,
-        "name": "bag",
-        "price": 3000,
-        "discountPercentage": 10,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
-        "isSold": true,
-        "category": "accessories",
-        "isSale": true
     }
 ]

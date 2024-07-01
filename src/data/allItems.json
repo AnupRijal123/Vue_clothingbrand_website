@@ -1,65 +1,291 @@
 [
     {
         "id": 1,
-        "name": "Tshirt",
-        "price": 1200,
+        "name": "Women's Active GO DRI® SWIFT Full-Zip Hoodie",
+        "price": 5000,
         "description": [
-            "100% pure cotton",
-            "relaxed fit",
-            "size s,m,l,xl,xxl"
+            "GO DRI® Swift lightweight fabric; four-way active stretch; moisture wicking; quick-drying; UPF 40+ protection",
+            "Attached hood with drawstring; front zip closure with diamond logo puller; front kangaroo pocket; reflective Skechers® Diamond logo"
         ],
         "size": [
+            "xs",
+            "s",
             "m",
             "l",
-            "xl"
+            "xl",
+            "2xl"
         ],
-        "discountPercentage": 10,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
-        "isSold": true,
+        "discountPercentage": 30,
+        "img1": "Women's Active GO DRI® SWIFT Full-Zip Hoodie1.jpg",
+        "img2": "Women's Active GO DRI® SWIFT Full-Zip Hoodie2.jpg",
+        "isSold": false,
         "category": "casuals",
+        "madeIn": "china",
+        "isSale": false
+    },
+    {
+        "id": 12,
+        "name": "Women's Embellished Straw Cloche Hat",
+        "price": 1600,
+        "description": [
+            "Adjustable sizing",
+            "Horse bit logo band embellishment",
+            "Paper"
+        ],
+        "size": null,
+        "discountPercentage": 40,
+        "img1": "Women's Embellished Straw Cloche Hat1.jpg",
+        "img2": "Women's Embellished Straw Cloche Hat2.jpg",
+        "isSold": true,
+        "category": "accessories",
         "madeIn": "china",
         "isSale": true
     },
     {
-        "id": 2,
-        "name": "kurtha",
-        "price": 800,
+        "id": 5,
+        "name": "Petite Mesh-Sleeve Embellished Gown",
+        "price": 16000,
         "description": [
-            "100% pure cotton",
-            "relaxed fit",
-            "size s,m,l,xl,xxl"
+            " Smooth, sheer woven fabric",
+            "Floor-length formal dress",
+            "Boat neckline; Gown silhouette",
+            "Embellished top",
+            "Back zipper closure"
         ],
         "size": [
-            "m",
-            "l",
-            "xl",
-            "xxl",
-            "xxxl"
+            "4p",
+            "6p",
+            "8p",
+            "10p",
+            "12p",
+            "14p"
         ],
         "discountPercentage": null,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
-        "isSold": true,
+        "img1": "Petite Mesh-Sleeve Embellished Gown1.jpg",
+        "img2": "Petite Mesh-Sleeve Embellished Gown2.jpg",
+        "isSold": false,
         "category": "ethnics",
         "madeIn": "india",
         "isSale": false
     },
     {
-        "id": 3,
-        "name": "bag",
-        "price": 3000,
+        "id": 2,
+        "name": "Women's Polo Collar Button Down Colorblocked Jacket",
+        "price": 3500,
         "description": [
-            "100% pure cotton",
-            "relaxed fit",
-            "size s,m,l,xl,xxl"
+            "Spread collar; front button closures",
+            "Long sleeve",
+            "Colorblocked design"
         ],
-        "discountPercentage": 10,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
+        "size": [
+            "s",
+            "m"
+        ],
+        "discountPercentage": 15,
+        "img1": "Women's Polo Collar Button Down Colorblocked Jacket1.jpg",
+        "img2": "Women's Polo Collar Button Down Colorblocked Jacket1.jpg",
+        "isSold": true,
+        "category": "casuals",
+        "madeIn": "china",
+        "isSale": false
+    },
+    {
+        "id": 3,
+        "name": "Rebel Cargo Pants",
+        "price": 2200,
+        "description": [
+            "Side-seam pockets; cargo pockets at sides; buttoned flap pockets at back",
+            "Elastic cuffs",
+            "Zipper and button closures at front; belt loops"
+        ],
+        "size": [
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"
+        ],
+        "discountPercentage": 25,
+        "img1": "Rebel Cargo Pants1.jpg",
+        "img2": "Rebel Cargo Pants2.jpg",
+        "isSold": false,
+        "category": "casuals",
+        "madeIn": "china",
+        "isSale": true
+    },
+    {
+        "id": 11,
+        "name": "Glenwood Leather Shoulder with Tassel Detail",
+        "price": 3600,
+        "description": [
+            "Large sized bag; 14W x 12H x 7D (width is measured across the bottom of handbag); 3 lbs. approx. weight",
+            "8inch L handle",
+            "Magnetic closure",
+            "Gold-tone exterior hardware; interior zip pocket & 3 slip pockets",
+            "Leather"
+        ],
+        "size": null,
+        "discountPercentage": 6,
+        "img1": "Glenwood Leather Shoulder with Tassel Detail1.jpg",
+        "img2": "Glenwood Leather Shoulder with Tassel Detail2.jpg",
         "isSold": false,
         "category": "accessories",
+        "madeIn": "china",
+        "isSale": false
+    },
+    {
+        "id": 4,
+        "name": "Women's Packable Hooded Puffer Coat, Created for Macy's",
+        "price": 5000,
+        "description": [
+            "Water-resistant",
+            "Two side zipper pockets; two open inner pockets",
+            "Stand collar with zip-off hood; front zipper closure"
+        ],
+        "size": [
+            "l",
+            "xl",
+            "2xl"
+        ],
+        "discountPercentage": 5,
+        "img1": "Women's Packable Hooded Puffer Coat, Created for Macy's1.jpg",
+        "img2": "Women's Packable Hooded Puffer Coat, Created for Macy's2.jpg",
+        "isSold": false,
+        "category": "casuals",
+        "madeIn": "china",
+        "isSale": false
+    },
+    {
+        "id": 6,
+        "name": "Women's Printed Blouson-Sleeve Maxi Dress",
+        "price": 6000,
+        "description": [
+            "Long blouson sleeves; elasticated cuffs",
+            "Lined",
+            "V-neck; Sheath silhouette",
+            "Foil printed; pleated empire waist; center front ruching"
+        ],
+        "size": [
+            "10",
+            "12",
+            "14"
+        ],
+        "discountPercentage": null,
+        "img1": "Women's Printed Blouson-Sleeve Maxi Dress1.jpg",
+        "img2": "Women's Printed Blouson-Sleeve Maxi Dress2.jpg",
+        "isSold": true,
+        "category": "ethnics",
+        "madeIn": "india",
+        "isSale": true
+    },
+    {
+        "id": 7,
+        "name": "Women's Tie-Dye Puff-Sleeve Top",
+        "price": 3000,
+        "description": [
+            "Round neckline keyhole and button closure at back",
+            "Printed",
+            "Short puff sleeves"
+        ],
+        "size": [
+            "xxs",
+            "m"
+        ],
+        "discountPercentage": 60,
+        "img1": "Women's Tie-Dye Puff-Sleeve Top1.jpg",
+        "img2": "Women's Tie-Dye Puff-Sleeve Top2.jpg",
+        "isSold": true,
+        "category": "casuals",
         "madeIn": "usa",
+        "isSale": true
+    },
+    {
+        "id": 8,
+        "name": "Women's Mixed Media Puff Sleeve Bouquet Knit Top",
+        "price": 2500,
+        "description": [
+            "Puffed sheer short sleeves with floral detailing",
+            "Crewneck",
+            "Short puff sleeves"
+        ],
+        "size": [
+            "xs",
+            "s",
+            "m",
+            "l"
+        ],
+        "discountPercentage": 45,
+        "img1": "Women's Mixed Media Puff Sleeve Bouquet Knit Top1.jpg",
+        "img2": "Women's Mixed Media Puff Sleeve Bouquet Knit Top2.jpg",
+        "isSold": false,
+        "category": "casuals",
+        "madeIn": "usa",
+        "isSale": true
+    },
+    {
+        "id": 9,
+        "name": "Women's Printed Flutter-Sleeve Midi Dress",
+        "price": 4000,
+        "description": [
+            " Smooth, sheer woven fabric",
+            "Floor-length formal dress",
+            "Boat neckline; Gown silhouette",
+            "Embellished top",
+            "Back zipper closure"
+        ],
+        "size": [
+            "s",
+            "m",
+            "l"
+        ],
+        "discountPercentage": 20,
+        "img1": "Women's Printed Flutter-Sleeve Midi Dress1.jpg",
+        "img2": "Women's Printed Flutter-Sleeve Midi Dress2.jpg",
+        "isSold": false,
+        "category": "ethnics",
+        "madeIn": "india",
+        "isSale": true
+    },
+    {
+        "id": 10,
+        "name": "Women's Beaded Blouson-Sleeve Gown",
+        "price": 10000,
+        "description": [
+            "Sequin & beading design throughout; blouson bodice",
+            "Damage to beading can occur during try-on or wear",
+            "Gown: Floor-length formal dress",
+            "Boat neckline; Gown silhouette"
+        ],
+        "size": [
+            "4",
+            "6",
+            "10"
+        ],
+        "discountPercentage": 5,
+        "img1": "Women's Beaded Blouson-Sleeve Gown1.jpg",
+        "img2": "Women's Beaded Blouson-Sleeve Gown2.jpg",
+        "isSold": false,
+        "category": "ethnics",
+        "madeIn": "india",
+        "isSale": false
+    },
+    {
+        "id": 13,
+        "name": "Women's Signature Logo Silk Square Scarf",
+        "price": 700,
+        "description": [
+            "Dimensions: 36 x 36; one size",
+            "Polyester",
+            "Machine washable"
+        ],
+        "size": null,
+        "discountPercentage": 15,
+        "img1": "Women's Signature Logo Silk Square Scarf1.jpg",
+        "img2": "Women's Signature Logo Silk Square Scarf2.jpg",
+        "isSold": false,
+        "category": "accessories",
+        "madeIn": "china",
         "isSale": true
     }
 ]

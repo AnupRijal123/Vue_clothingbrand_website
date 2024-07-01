@@ -87,7 +87,7 @@ export default {
     z-index: 1;
     width: 100%;
     padding:20px 0px;
-    transition: all 0.8s ease;
+    transition: all 0.9s ease;
 }
 
 .white-navbar {

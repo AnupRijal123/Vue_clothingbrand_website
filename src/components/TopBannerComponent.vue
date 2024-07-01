@@ -50,7 +50,7 @@ export default{
     display:flex;
     justify-content:center;
     align-items:center;
-    transition:height 0.8s ease;
+    transition:height 0.9s ease;
 }
 
 .banner-text{

@@ -136,11 +136,12 @@ methods:{
     overflow:hidden;
 }
 .poster-image {
+    filter:brightness(80%);
     width:100%;
     height:100%;
     object-fit: fill;
     transform:scale(1.2);
-    transition:transform 0.7s ease;
+    transition:transform 0.8s ease;
   
 }
 .poster-image:hover{
@@ -264,7 +265,7 @@ methods:{
     width:100%;
     height:100%;
     object-fit:fill;
-    transition:transform 1.2s ease;
+    transition:transform 1.4s ease;
 }
 .model-image:hover{
     transform:scale(1.5);

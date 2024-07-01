@@ -15,9 +15,7 @@ export default{
 
         }
     },
-    mounted(){
-        console.log('prop value',this.whiteNavbar);
-    },
+  
     watch:{
         isWhiteNavbar(value){
             this.whiteNavbar=value;

@@ -1,35 +1,58 @@
 [
     {
-        "id": 1,
-        "name": "clothes",
-        "price": 1200,
-        "discountPercentage": 10,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
-        "isSold": true,
-        "category": "casuals",
+        "id": 13,
+        "name": "Women's Signature Logo Silk Square Scarf",
+        "price": 700,
+        "description": [
+            "Dimensions: 36 x 36; one size",
+            "Polyester",
+            "Machine washable"
+        ],
+        "size": null,
+        "discountPercentage": 15,
+        "img1": "Women's Signature Logo Silk Square Scarf1.jpg",
+        "img2": "Women's Signature Logo Silk Square Scarf2.jpg",
+        "isSold": false,
+        "category": "accessories",
+        "madeIn": "china",
         "isSale": true
     },
     {
-        "id": 2,
-        "name": "kurtha",
-        "price": 800,
-        "discountPercentage": 10,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
-        "isSold": true,
-        "category": "ethnics",
+        "id": 11,
+        "name": "Glenwood Leather Shoulder with Tassel Detail",
+        "price": 3600,
+        "description": [
+            "Large sized bag; 14W x 12H x 7D (width is measured across the bottom of handbag); 3 lbs. approx. weight",
+            "8inch L handle",
+            "Magnetic closure",
+            "Gold-tone exterior hardware; interior zip pocket & 3 slip pockets",
+            "Leather"
+        ],
+        "size": null,
+        "discountPercentage": 6,
+        "img1": "Glenwood Leather Shoulder with Tassel Detail1.jpg",
+        "img2": "Glenwood Leather Shoulder with Tassel Detail2.jpg",
+        "isSold": false,
+        "category": "accessories",
+        "madeIn": "china",
         "isSale": false
     },
     {
-        "id": 3,
-        "name": "bag",
-        "price": 3000,
-        "discountPercentage": 10,
-        "img1": "item1.jpg",
-        "img2": "item2.jpeg",
+        "id": 12,
+        "name": "Women's Embellished Straw Cloche Hat",
+        "price": 1600,
+        "description": [
+            "Adjustable sizing",
+            "Horse bit logo band embellishment",
+            "Paper"
+        ],
+        "size": null,
+        "discountPercentage": 40,
+        "img1": "Women's Embellished Straw Cloche Hat1.jpg",
+        "img2": "Women's Embellished Straw Cloche Hat2.jpg",
         "isSold": true,
         "category": "accessories",
+        "madeIn": "china",
         "isSale": true
     }
 ]

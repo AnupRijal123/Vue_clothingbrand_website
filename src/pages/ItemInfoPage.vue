@@ -155,7 +155,6 @@ export default{
        this.selectedItem=this.allItems.filter((item)=>{
             return item.id===this.itemID
         });
-        console.log('selected item',this.selectedItem);
         this.selectedImage=this.selectedItem[0].img1;
    },
    methods:{
@@ -166,7 +165,6 @@ export default{
         this.$router.push('/');
     },
     goToCategory(categoryName){
-        console.log(categoryName)
         if(categoryName==='casuals'){
             this.$router.push('/categories/casuals');
         }
@@ -179,7 +177,6 @@ export default{
     },
         selectImage(image){
         this.selectedImage=image;
-        console.log(this.selectedImage);
 
         if(this.selectedImage===this.selectedItem[0]?.img1){
             this.goLeft();
@@ -273,7 +270,6 @@ export default{
  }
  .main-image-container{
     width:500px;
-    height:300px;
     position:relative;
     overflow:hidden;
 }
@@ -416,6 +412,9 @@ export default{
  }
  .description-list{
     padding-left:5px;
+ }
+ .description-list li{
+    padding:8px 0px;
  }
  .take-full-height{
     height:120px;

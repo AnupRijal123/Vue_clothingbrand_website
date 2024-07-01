@@ -48,12 +48,8 @@ export default {
             items: this.itemsArray,
         }
     },
-    mounted() {
-        console.log('itemcomponent',this.items);
-    },
     watch:{
         itemsArray(value){
-            console.log('new component',value);
             this.items=value;
         }
         /* DisplayItems component bata yo component ma array prop 
@@ -66,7 +62,6 @@ export default {
     },
     methods:{
         goToItemInfo(itemId){
-            console.log(itemId);
             this.$router.push(`/item/${itemId}`);
         }
     }
@@ -109,13 +104,13 @@ export default {
 
 .card-image {
     width: 100%;
-    height:170px;
+    height:270px;
     object-fit: fill;
     transition:transform 0.5s ease;
     cursor:pointer;
 }
 .card-image1{
-    transition:width 0.4s ease-in-out;
+    transition:width 0.5s ease-in-out;
     opacity:1;
 }
 
@@ -125,7 +120,7 @@ export default {
 }
 .card-image2{
     width:0px;
-    transition:width 0.4s ease-in-out;
+    transition:width 0.5s ease-in-out;
     opacity:0;
 }
 .card:hover .card-image2{
@@ -134,7 +129,6 @@ export default {
 }
 
 .card:hover .card-image{
-    transform:scale(1.08);
     filter:brightness(80%);
 }
 
