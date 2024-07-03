@@ -195,11 +195,13 @@ export default{
         goLeft(){
             this.moveRight=false;
             this.moveLeft=true;
+            this.selectedImage=this.selectedItem[0].img1;
         },  
 
         goRight(){
             this.moveLeft=false;
             this.moveRight=true;
+            this.selectedImage=this.selectedItem[0].img2;
         }
 
        
